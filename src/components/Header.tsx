@@ -43,11 +43,7 @@ export const Header: React.FC<HeaderProps> = ({
     'Earrings',
     'Necklaces',
     'Bracelets',
-    'Gold Jewelry',
-    'Diamond Jewelry',
-    'Bridal Jewelry',
-    'Party & Occasion',
-    'Custom Jewelry'
+    'Bridal Jewelry'
   ];
 
   const handleNavClick = (item: string) => {
@@ -101,7 +97,7 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Center / Desktop Quick Navigation in golden fonts */}
         <div className="hidden lg:flex items-center gap-2 xl:gap-3">
-          {['All Jewelry', 'Rings', 'Gold Jewelry', 'Bridal Jewelry'].map((cat) => (
+          {['All Jewelry', 'Rings', 'Earrings', 'Necklaces', 'Bracelets', 'Bridal Jewelry'].map((cat) => (
             <button
               key={cat}
               onClick={() => handleNavClick(cat)}

@@ -117,7 +117,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {/* Gallery Column */}
             <div className="flex flex-col gap-4">
-              {/* Main Image Display */}
+              {/* Main Image Display (SAVE and BEST SELLER options removed from image) */}
               <div className="relative aspect-square w-full bg-[#F7F4EB] overflow-hidden border border-[#DECFA9]">
                 <img
                   src={images[selectedImageIndex] || product.image}
@@ -125,12 +125,6 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover object-center transition-all duration-300"
                 />
-
-                {discountPercent && (
-                  <span className="absolute top-3 left-3 bg-[#7E5C1E] text-[#FAF6EE] text-xs font-sans font-bold tracking-wider uppercase px-2.5 py-1 shadow-xs">
-                    Save {discountPercent}%
-                  </span>
-                )}
               </div>
 
               {/* Thumbnails Row */}

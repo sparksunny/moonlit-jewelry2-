@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import defaultLogoImg from '../assets/images/moonlit_brand_logo_1790773623185.jpg';
+import defaultLogoImg from '../Images/logo.jpg';
 
 interface MoonlitLogoProps {
   customUrl?: string;

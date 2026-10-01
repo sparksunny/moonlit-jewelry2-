@@ -93,7 +93,7 @@ export const Footer: React.FC<FooterProps> = ({
               Shop Categories
             </h4>
             <ul className="space-y-2.5 text-xs font-sans text-black font-bold">
-              {['All Jewelry', 'Rings', 'Earrings', 'Necklaces', 'Bracelets'].map((cat) => (
+              {['All Jewelry', 'Rings', 'Earrings', 'Necklaces', 'Bracelets', 'Bridal Jewelry'].map((cat) => (
                 <li key={cat}>
                   <button
                     onClick={() => onSelectCategory(cat)}
@@ -106,25 +106,25 @@ export const Footer: React.FC<FooterProps> = ({
             </ul>
           </div>
 
-          {/* Column 3: Precious Collections */}
+          {/* Column 3: Featured Sets */}
           <div>
             <h4 className="text-xs font-sans tracking-[0.2em] uppercase text-black font-bold mb-4">
               Collections
             </h4>
             <ul className="space-y-2.5 text-xs font-sans text-black font-bold">
               {[
-                'Gold Jewelry',
-                'Diamond Jewelry',
-                'Bridal Jewelry',
-                'Party & Occasion',
-                'Custom Jewelry'
-              ].map((col) => (
-                <li key={col}>
+                { label: 'Bridal Sets', cat: 'Bridal Jewelry' },
+                { label: 'Heirloom Rings', cat: 'Rings' },
+                { label: 'Chandelier Earrings', cat: 'Earrings' },
+                { label: 'Statement Necklaces', cat: 'Necklaces' },
+                { label: 'Tennis Bracelets', cat: 'Bracelets' }
+              ].map(({ label, cat }) => (
+                <li key={label}>
                   <button
-                    onClick={() => onSelectCategory(col)}
+                    onClick={() => onSelectCategory(cat)}
                     className="text-black font-bold hover:underline transition-all cursor-pointer"
                   >
-                    {col}
+                    {label}
                   </button>
                 </li>
               ))}

@@ -308,10 +308,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                   <option value="earrings">Earrings</option>
                   <option value="necklaces">Necklaces</option>
                   <option value="bracelets">Bracelets</option>
-                  <option value="gold jewelry">Gold Jewelry</option>
-                  <option value="diamond jewelry">Diamond Jewelry</option>
                   <option value="bridal jewelry">Bridal Jewelry</option>
-                  <option value="party & occasion">Party & Occasion</option>
                 </select>
               </div>
 
@@ -994,11 +991,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                     <option value="Earrings">Earrings</option>
                     <option value="Necklaces">Necklaces</option>
                     <option value="Bracelets">Bracelets</option>
-                    <option value="Gold Jewelry">Gold Jewelry</option>
-                    <option value="Diamond Jewelry">Diamond Jewelry</option>
                     <option value="Bridal Jewelry">Bridal Jewelry</option>
-                    <option value="Party & Occasion">Party & Occasion</option>
-                    <option value="Custom Jewelry">Custom Jewelry</option>
                   </select>
                 </div>
               </div>

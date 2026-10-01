@@ -8,7 +8,7 @@ export const INITIAL_SITE_CONTENT: SiteContent = {
     'Discover beautifully crafted luxury jewelry featuring real precious metals, refined craftsmanship, and timeless designs created for life’s most memorable occasions.',
   heroCtaPrimary: 'Explore Our Collection',
   heroCtaSecondary: 'Contact Us',
-  heroImage: '/src/assets/images/hero_moonlit_jewelry_1790772434171.jpg',
+  heroImage: '/Images/hero_banner.jpg',
   aboutHeading: 'The Art of Precious Metals & Fine Jewelry',
   aboutDescription:
     'Moonlit Luxury Jewelry brings together master artisans to craft heirloom-worthy rings, necklaces, earrings, and bespoke creations. Every curve reflects enduring passion, authentic purity, and uncompromising artistry.',
@@ -37,9 +37,5 @@ export const INITIAL_CATEGORIES = [
   'Earrings',
   'Necklaces',
   'Bracelets',
-  'Gold Jewelry',
-  'Diamond Jewelry',
-  'Bridal Jewelry',
-  'Party & Occasion',
-  'Custom Jewelry'
+  'Bridal Jewelry'
 ];

@@ -80,19 +80,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           />
         )}
 
-        {/* Status / Discount text tag in warm golden tones */}
-        <div className="absolute top-3 left-3 flex flex-col gap-1 z-10">
-          {discountPercent && discountPercent > 0 && (
-            <span className="text-[10px] tracking-[0.16em] uppercase font-sans font-bold bg-[#7E5C1E] text-[#FAF6EE] px-2 py-0.5 shadow-xs">
-              Save {discountPercent}%
-            </span>
-          )}
-          {product.badge && (
+        {/* Status tag in warm golden tones (SAVE and BEST SELLER options removed from images) */}
+        {product.badge && !/^(best seller|save)/i.test(product.badge.trim()) && (
+          <div className="absolute top-3 left-3 flex flex-col gap-1 z-10">
             <span className="text-[10px] tracking-[0.16em] uppercase font-sans font-bold bg-[#FAF6EE]/95 backdrop-blur-xs text-[#5A4112] px-2 py-0.5 border border-[#DECFA9]">
               {product.badge}
             </span>
-          )}
-        </div>
+          </div>
+        )}
 
         {/* Quick View Button overlay on hover in warm golden-cream scrim */}
         <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-[#5A4112]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2">

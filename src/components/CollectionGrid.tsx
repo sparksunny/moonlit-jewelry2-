@@ -135,10 +135,7 @@ export const CollectionGrid: React.FC<CollectionGridProps> = ({
     'Earrings',
     'Necklaces',
     'Bracelets',
-    'Gold Jewelry',
-    'Diamond Jewelry',
-    'Bridal Jewelry',
-    'Party & Occasion'
+    'Bridal Jewelry'
   ];
 
   return (
