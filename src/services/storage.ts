@@ -3,10 +3,10 @@ import { INITIAL_PRODUCTS } from '../data/initialProducts';
 import { INITIAL_SITE_CONTENT } from '../data/initialContent';
 
 const STORAGE_KEYS = {
-  PRODUCTS: 'moonlit_products_v4',
-  CONTENT: 'moonlit_site_content_v4',
-  INQUIRIES: 'moonlit_inquiries_v4',
-  CATEGORIES: 'moonlit_categories_v4'
+  PRODUCTS: 'moonlit_products_v5',
+  CONTENT: 'moonlit_site_content_v5',
+  INQUIRIES: 'moonlit_inquiries_v5',
+  CATEGORIES: 'moonlit_categories_v5'
 };
 
 export const storage = {

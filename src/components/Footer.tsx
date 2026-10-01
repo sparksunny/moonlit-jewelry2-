@@ -93,7 +93,15 @@ export const Footer: React.FC<FooterProps> = ({
               Shop Categories
             </h4>
             <ul className="space-y-2.5 text-xs font-sans text-black font-bold">
-              {['All Jewelry', 'Rings', 'Earrings', 'Necklaces', 'Bracelets', 'Bridal Jewelry'].map((cat) => (
+              {[
+                'All Jewelry',
+                'Wedding Bands & Rings',
+                'Necklaces',
+                'Bridal Jewelry',
+                'Bangles & Bracelets',
+                'Earrings & Studs',
+                'Pearl & Polki Jewelry'
+              ].map((cat) => (
                 <li key={cat}>
                   <button
                     onClick={() => onSelectCategory(cat)}
@@ -113,11 +121,11 @@ export const Footer: React.FC<FooterProps> = ({
             </h4>
             <ul className="space-y-2.5 text-xs font-sans text-black font-bold">
               {[
-                { label: 'Bridal Sets', cat: 'Bridal Jewelry' },
-                { label: 'Heirloom Rings', cat: 'Rings' },
-                { label: 'Chandelier Earrings', cat: 'Earrings' },
-                { label: 'Statement Necklaces', cat: 'Necklaces' },
-                { label: 'Tennis Bracelets', cat: 'Bracelets' }
+                { label: 'Wedding Bands & Rings', cat: 'Wedding Bands & Rings' },
+                { label: 'Royal Bridal Sets', cat: 'Bridal Jewelry' },
+                { label: 'Bangles & Bracelets', cat: 'Bangles & Bracelets' },
+                { label: 'Earrings & Studs', cat: 'Earrings & Studs' },
+                { label: 'Pearl & Polki Jewelry', cat: 'Pearl & Polki Jewelry' }
               ].map(({ label, cat }) => (
                 <li key={label}>
                   <button

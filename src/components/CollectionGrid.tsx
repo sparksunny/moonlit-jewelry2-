@@ -49,13 +49,97 @@ export const CollectionGrid: React.FC<CollectionGridProps> = ({
   const filteredProducts = useMemo(() => {
     let result = products.filter((p) => p.visible);
 
-    // Category filter
-    if (selectedCategory !== 'All Jewelry') {
-      result = result.filter(
-        (p) =>
-          p.category.toLowerCase() === selectedCategory.toLowerCase() ||
-          p.tags.some((t) => t.toLowerCase().includes(selectedCategory.toLowerCase()))
-      );
+    // Category filter with intelligent aliases
+    if (selectedCategory && selectedCategory !== 'All Jewelry' && selectedCategory !== 'Home') {
+      const cat = selectedCategory.toLowerCase().trim();
+      result = result.filter((p) => {
+        const pc = (p.category || '').toLowerCase();
+        const pn = (p.name || '').toLowerCase();
+        const ptags = (p.tags || []).map((t) => t.toLowerCase());
+        const pgem = (p.gemstone || '').toLowerCase();
+        const pdesc = (p.shortDescription || '').toLowerCase();
+
+        // Exact match
+        if (pc === cat || ptags.includes(cat)) return true;
+
+        // Wedding Bands & Rings
+        if (cat === 'wedding bands & rings' || cat === 'rings') {
+          return (
+            pc.includes('ring') ||
+            pc.includes('band') ||
+            pn.includes('ring') ||
+            pn.includes('band') ||
+            ptags.some((t) => /ring|band/i.test(t))
+          );
+        }
+
+        // Necklaces / Necklace
+        if (cat === 'necklaces' || cat === 'necklace') {
+          return (
+            pc.includes('necklace') ||
+            pc.includes('pendant') ||
+            pn.includes('necklace') ||
+            pn.includes('pendant') ||
+            ptags.some((t) => /necklace|pendant|choker/i.test(t))
+          );
+        }
+
+        // Bridal Jewelry
+        if (cat === 'bridal jewelry') {
+          return (
+            pc.includes('bridal') ||
+            pn.includes('bridal') ||
+            ptags.some((t) => /bridal|wedding|shaadi/i.test(t))
+          );
+        }
+
+        // Bangles & Bracelets (with typo tolerance for bracelats)
+        if (
+          cat === 'bangles & bracelets' ||
+          cat === 'bracelets' ||
+          cat.includes('bracelet') ||
+          cat.includes('bangle') ||
+          cat.includes('bracelat')
+        ) {
+          return (
+            pc.includes('bracelet') ||
+            pc.includes('bangle') ||
+            pn.includes('bracelet') ||
+            pn.includes('bangle') ||
+            pn.includes('cuff') ||
+            ptags.some((t) => /bracelet|bangle|cuff|kara/i.test(t))
+          );
+        }
+
+        // Earrings & Studs
+        if (cat === 'earrings & studs' || cat === 'earrings') {
+          return (
+            pc.includes('earring') ||
+            pc.includes('stud') ||
+            pn.includes('earring') ||
+            pn.includes('stud') ||
+            ptags.some((t) => /earring|stud|jhumka|hoop|drop/i.test(t))
+          );
+        }
+
+        // Pearl & Polki Jewelry
+        if (cat === 'pearl & polki jewelry' || cat.includes('pearl') || cat.includes('polki')) {
+          return (
+            pc.includes('pearl') ||
+            pc.includes('polki') ||
+            pgem.includes('pearl') ||
+            pgem.includes('polki') ||
+            pn.includes('pearl') ||
+            pn.includes('polki') ||
+            pn.includes('pearlescent') ||
+            pdesc.includes('pearl') ||
+            pdesc.includes('polki') ||
+            ptags.some((t) => /pearl|polki|kundan/i.test(t))
+          );
+        }
+
+        return pc.includes(cat) || ptags.some((t) => t.includes(cat));
+      });
     }
 
     // Material filter
@@ -131,11 +215,12 @@ export const CollectionGrid: React.FC<CollectionGridProps> = ({
 
   const categoriesList = [
     'All Jewelry',
-    'Rings',
-    'Earrings',
+    'Wedding Bands & Rings',
     'Necklaces',
-    'Bracelets',
-    'Bridal Jewelry'
+    'Bridal Jewelry',
+    'Bangles & Bracelets',
+    'Earrings & Studs',
+    'Pearl & Polki Jewelry'
   ];
 
   return (

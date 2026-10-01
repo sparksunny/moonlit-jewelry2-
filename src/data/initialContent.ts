@@ -33,9 +33,10 @@ export const INITIAL_SITE_CONTENT: SiteContent = {
 
 export const INITIAL_CATEGORIES = [
   'All Jewelry',
-  'Rings',
-  'Earrings',
+  'Wedding Bands & Rings',
   'Necklaces',
-  'Bracelets',
-  'Bridal Jewelry'
+  'Bridal Jewelry',
+  'Bangles & Bracelets',
+  'Earrings & Studs',
+  'Pearl & Polki Jewelry'
 ];
