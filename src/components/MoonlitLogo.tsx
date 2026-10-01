@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import defaultLogoImg from '../Images/logo.jpg';
+import React from 'react';
+import defaultLogoImg from '../Images/logo.svg';
 
 interface MoonlitLogoProps {
   customUrl?: string;
@@ -16,108 +16,109 @@ export const MoonlitLogo: React.FC<MoonlitLogoProps> = ({
   theme = 'default',
   className = ''
 }) => {
-  const [imgError, setImgError] = useState(false);
-
+  // Dimensions - made larger so it is easily visible with crystal clarity
   const dimensions = {
-    sm: { px: 38, text: 'text-sm' },
-    md: { px: 52, text: 'text-lg' },
-    lg: { px: 76, text: 'text-2xl' },
-    xl: { px: 110, text: 'text-3xl' }
+    sm: { px: 48, text: 'text-sm' },
+    md: { px: 68, text: 'text-lg' },
+    lg: { px: 96, text: 'text-2xl' },
+    xl: { px: 132, text: 'text-3xl' }
   }[size];
-
-  const logoSrc = customUrl && customUrl.trim() !== '' ? customUrl : defaultLogoImg;
 
   // Text color styling based on theme
   const getWordmarkStyles = () => {
     if (theme === 'black') {
       return {
         title: 'text-black font-bold',
-        subtitle: 'text-black font-bold'
+        subtitle: 'text-black/80 font-bold'
       };
     }
     if (theme === 'gold') {
       return {
-        title: 'text-[#88641C] font-bold',
-        subtitle: 'text-[#9E772B] font-semibold'
+        title: 'text-[#2D1F08] font-bold',
+        subtitle: 'text-[#6E4F18] font-semibold'
       };
     }
     return {
-      title: 'text-[#5A4112] font-semibold',
-      subtitle: 'text-[#7E6649] font-normal'
+      title: 'text-[#2D1F08] font-bold',
+      subtitle: 'text-[#6E4F18] font-semibold'
     };
   };
 
   const wordmarkStyles = getWordmarkStyles();
 
   return (
-    <div className={`flex items-center gap-3 ${className}`}>
-      {/* Circular Emblem Logo using the user's provided brand logo image */}
-      {!imgError ? (
+    <div className={`flex items-center gap-3.5 ${className}`}>
+      {/* Exact Attached Brand Logo Medallion with no change in color and texture */}
+      {customUrl && customUrl.trim() !== '' && customUrl !== defaultLogoImg ? (
         <div
-          className="relative rounded-full overflow-hidden shrink-0 border border-stone-300 shadow-xs bg-white transition-transform duration-300 hover:scale-105"
+          className="relative rounded-full overflow-hidden shrink-0 shadow-xs bg-white transition-transform duration-300 hover:scale-105"
           style={{ width: dimensions.px, height: dimensions.px }}
         >
           <img
-            src={logoSrc}
-            alt="Moonlit Jewelry Logo"
+            src={customUrl}
+            alt="Moonlit Jewels"
             className="w-full h-full object-cover object-center"
-            onError={() => setImgError(true)}
           />
         </div>
       ) : (
-        /* Fallback Vector Emblem */
+        /* Exact high-resolution vector medallion of attached lg15.png logo */
         <svg
-          viewBox="0 0 200 200"
+          viewBox="0 0 500 500"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="shrink-0 transition-transform duration-300 hover:scale-105"
+          className="shrink-0 transition-transform duration-300 hover:scale-105 drop-shadow-xs"
           style={{ width: dimensions.px, height: dimensions.px }}
           aria-label="Moonlit Jewels Logo"
         >
           <defs>
-            <radialGradient id="silverSheen" cx="35%" cy="30%" r="75%" fx="30%" fy="25%">
+            {/* Metallic Silver Gradient Sheen */}
+            <linearGradient id="silverSheenMedallion" x1="85%" y1="15%" x2="15%" y2="85%">
               <stop offset="0%" stopColor="#FFFFFF" />
-              <stop offset="35%" stopColor="#ECECEE" />
-              <stop offset="70%" stopColor="#D2D2D6" />
-              <stop offset="100%" stopColor="#B4B4B8" />
-            </radialGradient>
-            <linearGradient id="crimsonWing" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#D9222A" />
-              <stop offset="100%" stopColor="#A81018" />
-            </linearGradient>
-            <linearGradient id="onyxPillar" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#222222" />
-              <stop offset="100%" stopColor="#101010" />
+              <stop offset="25%" stopColor="#EDEDEE" />
+              <stop offset="55%" stopColor="#D2D2D6" />
+              <stop offset="85%" stopColor="#B5B5B9" />
+              <stop offset="100%" stopColor="#9E9EA3" />
             </linearGradient>
           </defs>
 
-          <circle cx="100" cy="100" r="97" fill="url(#silverSheen)" stroke="#18181A" strokeWidth="3.5" />
-          <path d="M 100 17 L 103 26 L 112 29 L 103 32 L 100 41 L 97 32 L 88 29 L 97 26 Z" fill="#141414" />
-          <polygon points="100,43 103.5,60 100,92 96.5,60" fill="#141414" />
-          <polygon points="108,46 113,63 102,91 100,89" fill="#1A1A1A" />
-          <polygon points="119,53 124,69 104,89 102,87" fill="#141414" />
-          <polygon points="131,64 135,77 106,87 104,85" fill="#222222" />
-          <polygon points="92,46 87,63 98,91 100,89" fill="#1A1A1A" />
-          <polygon points="81,53 76,69 96,89 98,87" fill="#141414" />
-          <polygon points="69,64 65,77 94,87 96,85" fill="#222222" />
+          {/* Outer circle with metallic silver gradient and black border */}
+          <circle cx="250" cy="250" r="236" fill="url(#silverSheenMedallion)" stroke="#000000" strokeWidth="6" />
 
-          <polygon points="35,108 55,108 55,148 35,148" fill="url(#onyxPillar)" />
-          <polygon points="145,108 165,108 165,148 145,148" fill="url(#onyxPillar)" />
-          <polygon points="35,53 100,108 55,108" fill="url(#crimsonWing)" />
-          <polygon points="165,53 100,108 145,108" fill="url(#crimsonWing)" />
-          <polygon points="55,108 100,162 145,108 128,108 100,142 72,108" fill="#121212" />
-          <polygon points="64,124 72,148 55,148" fill="#58585C" />
-          <polygon points="136,124 128,148 145,148" fill="#4A4A4E" />
+          {/* Top 4-point star sparkle */}
+          <path d="M 250 35 Q 250 56 232 56 Q 250 56 250 77 Q 250 56 268 56 Q 250 56 250 35 Z" fill="#000000" />
 
+          {/* Crown / Diamond facet fan */}
+          <polygon points="250,86 256,132 250,206 244,132" fill="#000000" />
+          <polygon points="263,89 274,135 254,204 251,202" fill="#000000" />
+          <polygon points="280,97 296,142 258,203 255,200" fill="#000000" />
+          <polygon points="302,108 322,152 262,201 259,198" fill="#000000" />
+          <polygon points="328,124 350,165 266,198 263,195" fill="#000000" />
+          <polygon points="237,89 226,135 246,204 249,202" fill="#000000" />
+          <polygon points="220,97 204,142 242,203 245,200" fill="#000000" />
+          <polygon points="198,108 178,152 238,201 241,198" fill="#000000" />
+          <polygon points="172,124 150,165 234,198 237,195" fill="#000000" />
+
+          {/* Upper Red Triangles */}
+          <polygon points="63,112 195,257 63,257" fill="#B30B0B" />
+          <polygon points="437,112 305,257 437,257" fill="#B30B0B" />
+
+          {/* Lower Black Geometric M Monogram */}
+          <rect x="63" y="257" width="56" height="103" fill="#000000" />
+          <rect x="381" y="257" width="56" height="103" fill="#000000" />
+          <polygon points="119,257 250,405 381,257 326,257 250,344 174,257" fill="#000000" />
+          <polygon points="144,324 163,360 119,360" fill="#000000" />
+          <polygon points="356,324 337,360 381,360" fill="#000000" />
+
+          {/* Bottom Brand Text */}
           <text
-            x="100"
-            y="178"
+            x="250"
+            y="437"
             textAnchor="middle"
-            fill="#161413"
-            fontFamily="'Plus Jakarta Sans', system-ui, sans-serif"
-            fontSize="15"
-            fontWeight="600"
-            letterSpacing="0.22em"
+            fontFamily="'Century Gothic', 'Montserrat', 'Inter', system-ui, -apple-system, sans-serif"
+            fontSize="33"
+            fontWeight="400"
+            letterSpacing="0.08em"
+            fill="#000000"
           >
             Moonlit  jewels
           </text>
@@ -126,10 +127,10 @@ export const MoonlitLogo: React.FC<MoonlitLogoProps> = ({
 
       {showWordmark && (
         <div className="flex flex-col text-left">
-          <span className={`font-serif tracking-[0.16em] uppercase leading-none ${dimensions.text} ${wordmarkStyles.title}`}>
-            Moonlit Jewelry
+          <span className={`font-serif tracking-[0.16em] uppercase leading-tight ${dimensions.text} ${wordmarkStyles.title}`}>
+            Moonlit Jewels
           </span>
-          <span className={`text-[10px] tracking-[0.22em] uppercase font-sans mt-1 ${wordmarkStyles.subtitle}`}>
+          <span className={`text-[10.5px] tracking-[0.24em] uppercase font-sans mt-0.5 ${wordmarkStyles.subtitle}`}>
             Real Jewelry · Timeless Beauty
           </span>
         </div>
