@@ -91,7 +91,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF9F5] text-[#44331C] flex flex-col font-sans selection:bg-[#E8DFC8]">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#FAF9F5] text-[#44331C] flex flex-col font-sans selection:bg-[#E8DFC8]">
       {/* Primary Header */}
       <Header
         content={content}

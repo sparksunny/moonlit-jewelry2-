@@ -47,12 +47,11 @@ export const MoonlitLogo: React.FC<MoonlitLogoProps> = ({
   const wordmarkStyles = getWordmarkStyles();
 
   return (
-    <div className={`flex items-center gap-3.5 ${className}`}>
+    <div className={`flex items-center gap-2 sm:gap-3.5 ${className}`}>
       {/* Exact Attached Brand Logo Medallion with no change in color and texture */}
       {customUrl && customUrl.trim() !== '' && customUrl !== defaultLogoImg ? (
         <div
-          className="relative rounded-full overflow-hidden shrink-0 shadow-xs bg-white transition-transform duration-300 hover:scale-105"
-          style={{ width: dimensions.px, height: dimensions.px }}
+          className="relative rounded-full overflow-hidden shrink-0 shadow-xs bg-white transition-transform duration-300 hover:scale-105 w-11 h-11 sm:w-16 sm:h-16"
         >
           <img
             src={customUrl}
@@ -66,8 +65,7 @@ export const MoonlitLogo: React.FC<MoonlitLogoProps> = ({
           viewBox="0 0 500 500"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="shrink-0 transition-transform duration-300 hover:scale-105 drop-shadow-xs"
-          style={{ width: dimensions.px, height: dimensions.px }}
+          className="shrink-0 transition-transform duration-300 hover:scale-105 drop-shadow-xs w-11 h-11 sm:w-16 sm:h-16"
           aria-label="Moonlit Jewels Logo"
         >
           <defs>
@@ -127,10 +125,10 @@ export const MoonlitLogo: React.FC<MoonlitLogoProps> = ({
 
       {showWordmark && (
         <div className="flex flex-col text-left">
-          <span className={`font-serif tracking-[0.16em] uppercase leading-tight ${dimensions.text} ${wordmarkStyles.title}`}>
+          <span className={`font-serif tracking-[0.14em] sm:tracking-[0.16em] uppercase leading-tight text-base sm:text-lg ${wordmarkStyles.title}`}>
             Moonlit Jewels
           </span>
-          <span className={`text-[10.5px] tracking-[0.24em] uppercase font-sans mt-0.5 ${wordmarkStyles.subtitle}`}>
+          <span className={`text-[9px] sm:text-[10.5px] tracking-[0.16em] sm:tracking-[0.24em] uppercase font-sans mt-0.5 truncate ${wordmarkStyles.subtitle}`}>
             Real Jewelry · Timeless Beauty
           </span>
         </div>

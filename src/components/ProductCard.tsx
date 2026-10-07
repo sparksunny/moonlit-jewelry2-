@@ -88,22 +88,22 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         </div>
 
         {/* 5-digit Article No displayed at the bottom of each product image */}
-        <div className="absolute inset-x-0 bottom-0 py-1.5 px-3 bg-white/95 backdrop-blur-xs border-t border-[#EADBBD] flex items-center justify-between text-black z-10 shadow-2xs">
-          <span className="text-[10px] tracking-wider uppercase font-bold text-black font-sans">
+        <div className="absolute inset-x-0 bottom-0 py-1 sm:py-1.5 px-2 sm:px-3 bg-white/95 backdrop-blur-xs border-t border-[#EADBBD] flex items-center justify-between text-black z-10 shadow-2xs">
+          <span className="text-[9px] sm:text-[10px] tracking-wider uppercase font-bold text-black font-sans">
             Article No
           </span>
-          <span className="text-xs font-mono font-bold tracking-widest text-black">
+          <span className="text-[11px] sm:text-xs font-mono font-bold tracking-widest text-black">
             {product.articleNo}
           </span>
         </div>
       </div>
 
       {/* Product Content Details (Black font colors, no description, no price) */}
-      <div className="p-4 sm:p-5 flex flex-col flex-1 justify-between bg-[#FDFCF9]">
+      <div className="p-2.5 sm:p-4 md:p-5 flex flex-col flex-1 justify-between bg-[#FDFCF9]">
         <div>
           {/* Category & Material Metadata in pure Black */}
-          <div className="flex items-center gap-1.5 text-[11px] font-sans tracking-[0.18em] uppercase text-black font-bold mb-1.5">
-            <span className="text-black font-bold">{product.category}</span>
+          <div className="flex items-center gap-1 sm:gap-1.5 text-[9.5px] sm:text-[11px] font-sans tracking-[0.14em] sm:tracking-[0.18em] uppercase text-black font-bold mb-1 sm:mb-1.5">
+            <span className="text-black font-bold truncate max-w-[50%]">{product.category}</span>
             <span aria-hidden="true" className="text-black font-bold">·</span>
             <span className="truncate text-black font-bold">{product.material}</span>
           </div>
@@ -111,7 +111,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           {/* Product Title in pure Black */}
           <h3
             onClick={() => onSelect(product)}
-            className="font-serif text-base sm:text-lg font-bold text-black hover:underline transition-colors cursor-pointer line-clamp-2 leading-snug mb-2"
+            className="font-serif text-xs sm:text-base md:text-lg font-bold text-black hover:underline transition-colors cursor-pointer line-clamp-2 leading-snug mb-1.5 sm:mb-2"
             title={product.name}
           >
             {product.name}
@@ -119,8 +119,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         </div>
 
         {/* Action Footer (No price, pure Black font colors) */}
-        <div className="pt-3 border-t border-[#EADBBD] flex items-center justify-between gap-2">
-          <span className="text-xs font-sans uppercase tracking-[0.16em] font-bold text-black">
+        <div className="pt-2 sm:pt-3 border-t border-[#EADBBD] flex items-center justify-between gap-1 sm:gap-2">
+          <span className="text-[10px] sm:text-xs font-sans uppercase tracking-[0.12em] sm:tracking-[0.16em] font-bold text-black truncate">
             Art: {product.articleNo}
           </span>
 
@@ -129,11 +129,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               e.stopPropagation();
               onInquire(product);
             }}
-            className="px-3 py-1.5 bg-[#FAF6EE] hover:bg-black text-black hover:text-white border border-black transition-colors rounded-none cursor-pointer flex items-center gap-1.5 text-xs font-sans font-bold tracking-wider uppercase shadow-2xs"
+            className="px-2 sm:px-3 py-1 sm:py-1.5 bg-[#FAF6EE] hover:bg-black text-black hover:text-white border border-black transition-colors rounded-none cursor-pointer flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs font-sans font-bold tracking-wider uppercase shadow-2xs shrink-0"
             title="Ask about this jewelry piece"
             aria-label={`Ask about ${product.name}`}
           >
-            <MessageSquare className="w-3.5 h-3.5 text-current" />
+            <MessageSquare className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-current" />
             <span>Inquire</span>
           </button>
         </div>

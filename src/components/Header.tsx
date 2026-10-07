@@ -145,16 +145,6 @@ export const Header: React.FC<HeaderProps> = ({
               )}
             </button>
 
-            {/* Dedicated ADMIN Button */}
-            <button
-              onClick={onOpenAdmin}
-              className="px-3.5 py-1.5 text-xs font-sans font-bold tracking-[0.16em] uppercase bg-[#7E5C1E] text-[#FAF6EE] hover:bg-[#684a14] hover:text-white transition-all rounded-xs shadow-xs flex items-center gap-1.5 border border-[#684a14] cursor-pointer"
-              aria-label="Administrator Access"
-            >
-              <Lock className="w-3 h-3 text-[#FAF6EE]" />
-              <span>Admin</span>
-            </button>
-
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -231,16 +221,6 @@ export const Header: React.FC<HeaderProps> = ({
                 <span>: {content.phone || '+1 716-313-1615'}</span>
               </a>
             </div>
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenAdmin();
-              }}
-              className="w-full py-2.5 bg-[#7E5C1E] text-[#FAF6EE] rounded text-center font-bold tracking-widest uppercase flex items-center justify-center gap-2"
-            >
-              <Lock className="w-3 h-3 text-[#FAF6EE]" />
-              <span>Admin Access</span>
-            </button>
           </div>
         </div>
       )}
