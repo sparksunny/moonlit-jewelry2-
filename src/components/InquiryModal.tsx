@@ -37,7 +37,7 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
     if (selectedProduct) {
       setFormData((prev) => ({
         ...prev,
-        message: `Hello, I would like to inquire about "${selectedProduct.name}" (Code: ${selectedProduct.id}). Please let me know regarding sizing, availability, and pricing details.`
+        message: `Hello, I would like to inquire about "${selectedProduct.name}" (Article No: ${selectedProduct.articleNo}). Please let me know regarding sizing, customization, and availability.`
       }));
     } else {
       setFormData((prev) => ({
@@ -147,7 +147,7 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
                       {selectedProduct.name}
                     </p>
                     <p className="text-[#7E6649] font-sans font-medium">
-                      Ref: {selectedProduct.id} · {selectedProduct.material}
+                      Article No: {selectedProduct.articleNo} · {selectedProduct.material}
                     </p>
                   </div>
                 </div>

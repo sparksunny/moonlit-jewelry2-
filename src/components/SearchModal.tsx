@@ -136,8 +136,8 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                     </h4>
                   </div>
                   <div className="text-right shrink-0">
-                    <p className="font-serif text-sm font-bold text-[#44331C]">
-                      {formatPrice(product.price)}
+                    <p className="font-mono text-xs font-bold text-black">
+                      Art: {product.articleNo}
                     </p>
                     <span className="text-[11px] text-[#88641C] flex items-center justify-end gap-1 font-bold">
                       <span>View</span>

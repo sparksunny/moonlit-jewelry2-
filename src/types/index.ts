@@ -1,11 +1,12 @@
 export interface Product {
   id: string;
+  articleNo: string; // 5-digit number e.g. "10001"
   name: string;
   handle: string;
   category: string;
-  price: number;
+  price?: number;
   originalPrice?: number | null;
-  currency: string;
+  currency?: string;
   image: string;
   galleryImages: string[];
   shortDescription: string;
@@ -63,8 +64,6 @@ export interface CustomerInquiry {
 export type SortOption =
   | 'featured'
   | 'newest'
-  | 'price-asc'
-  | 'price-desc'
   | 'title-asc'
   | 'title-desc';
 
@@ -72,8 +71,6 @@ export interface FilterState {
   category: string;
   availability: string;
   material: string;
-  minPrice: number;
-  maxPrice: number;
   searchQuery: string;
   sortBy: SortOption;
 }

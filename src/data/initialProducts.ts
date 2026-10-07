@@ -1,30 +1,9 @@
-export interface Product {
-  id: string;
-  name: string;
-  handle: string;
-  category: string;
-  price: number;
-  originalPrice?: number | null;
-  currency: string;
-  image: string;
-  galleryImages: string[];
-  shortDescription: string;
-  description: string;
-  badge?: string | null;
-  availability: 'in_stock' | 'made_to_order' | 'low_stock' | 'out_of_stock';
-  featured: boolean;
-  isNew: boolean;
-  material: string;
-  gemstone?: string;
-  tags: string[];
-  visible: boolean;
-  careInstructions?: string;
-}
+import { Product } from "../types";
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
     "id": "moonlit-8433578836015",
-    "name": "Moonlit Jewelry Elegant Pear Cut Halo Ring \u2013 Silver Tone Adjustable Crystal Ring",
+    "name": "Moonlit Jewelry Elegant Pear Cut Halo Ring – Silver Tone Adjustable Crystal Ring",
     "handle": "tehreer-jewels-elegant-pear-cut-halo-ring-silver-tone-adjustable-crystal-ring",
     "category": "Wedding Bands & Rings",
     "price": 2299,
@@ -38,7 +17,7 @@ export const INITIAL_PRODUCTS: Product[] = [
       "https://cdn.shopify.com/s/files/1/0772/0288/2607/files/Silver_Tone_ring_2.png?v=1787589411"
     ],
     "shortDescription": "Designed for women who love sophisticated sparkle, this beautiful pear-cut ring features a stunning centerpiece surrounded by a delicate halo of shimmering stones.",
-    "description": "<p class=\"PDq2pG_selectionAnchorContainer\">Designed for women who love sophisticated sparkle, this beautiful pear-cut ring features a stunning centerpiece surrounded by a delicate halo of shimmering stones. The elegant silhouette enhances your style while adding a graceful touch to any outfit.<span class=\"PDq2pG_selectionAnchor\"></span></p>\n<p>Whether you are dressing up for a wedding event, a dinner, or adding a luxury touch to your everyday look, this ring is the perfect choice.</p>\n<p>\u00a0</p>\n<h3 class=\"PDq2pG_selectionAnchorContainer\">Product Details<span class=\"PDq2pG_selectionAnchor\"></span>\n</h3>\n<ul>\n<li>\n<strong>Design:</strong> Pear Cut Halo Ring</li>\n<li>\n<strong>Style:</strong> Elegant / Luxury / Minimal</li>\n<li>\n<strong>Color:</strong> Silver Tone</li>\n<li>\n<strong>Stone Type:</strong> High Sparkle Cubic Zirconia Style Crystal</li>\n<li>\n<strong>Setting:</strong> Halo Setting</li>\n<li>\n<strong>Ring Type:</strong> Adjustable Open Band</li>\n<li>\n<strong>Occasion:</strong> Party, Wedding, Engagement, Daily Wear</li>\n<li>\n<strong>For:</strong> Women</li>\n</ul>",
+    "description": "<p class=\"PDq2pG_selectionAnchorContainer\">Designed for women who love sophisticated sparkle, this beautiful pear-cut ring features a stunning centerpiece surrounded by a delicate halo of shimmering stones. The elegant silhouette enhances your style while adding a graceful touch to any outfit.<span class=\"PDq2pG_selectionAnchor\"></span></p>\n<p>Whether you are dressing up for a wedding event, a dinner, or adding a luxury touch to your everyday look, this ring is the perfect choice.</p>\n<p> </p>\n<h3 class=\"PDq2pG_selectionAnchorContainer\">Product Details<span class=\"PDq2pG_selectionAnchor\"></span>\n</h3>\n<ul>\n<li>\n<strong>Design:</strong> Pear Cut Halo Ring</li>\n<li>\n<strong>Style:</strong> Elegant / Luxury / Minimal</li>\n<li>\n<strong>Color:</strong> Silver Tone</li>\n<li>\n<strong>Stone Type:</strong> High Sparkle Cubic Zirconia Style Crystal</li>\n<li>\n<strong>Setting:</strong> Halo Setting</li>\n<li>\n<strong>Ring Type:</strong> Adjustable Open Band</li>\n<li>\n<strong>Occasion:</strong> Party, Wedding, Engagement, Daily Wear</li>\n<li>\n<strong>For:</strong> Women</li>\n</ul>",
     "badge": null,
     "availability": "made_to_order",
     "featured": true,
@@ -55,7 +34,6 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Adjustable Ring",
       "anniversary",
       "Anniversary Ring",
-      
       "birthday",
       "fashion jewelry",
       "gift for her",
@@ -64,13 +42,14 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Moonlit Jewelry"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10001"
   },
   {
     "id": "moonlit-8437118042159",
     "name": "Moonlit Jewelry Crystal Teardrop Pendant Necklace | Elegant Silver-Tone Diamond Necklace",
     "handle": "tehreer-jewels-crystal-teardrop-pendant-necklace-elegant-silver-tone-diamond-necklace",
-    "category": "Necklaces",
+    "category": "endants & Necklace",
     "price": 2799,
     "originalPrice": 3219,
     "currency": "PKR",
@@ -82,7 +61,7 @@ export const INITIAL_PRODUCTS: Product[] = [
       "https://cdn.shopify.com/s/files/1/0772/0288/2607/files/Nacklace3.png?v=1787844951"
     ],
     "shortDescription": "Make every moment memorable with our Teardrop Crystal Silver Tone Necklace , crafted for women who love sophisticated and graceful jewelry.",
-    "description": "<p dir=\"auto\">Make every moment memorable with our<strong> Teardrop Crystal Silver Tone Necklace</strong>, crafted for women who love sophisticated and graceful jewelry. Featuring a beautifully detailed V-shaped design with sparkling crystal stones and elegant teardrop pendants, this necklace adds a touch of glamour to any outfit.</p>\n<p dir=\"auto\">Designed with a premium-inspired finish, this necklace captures light beautifully, creating a radiant sparkle that complements both traditional and modern looks.</p>\n<p dir=\"auto\">\u00a0</p>\n<h4 dir=\"auto\">Product Details</h4>\n<ul>\n<li dir=\"auto\" style=\"text-align: left;\">\n<strong>Jewelry Type:</strong> Necklace</li>\n<li dir=\"auto\" style=\"text-align: left;\">\n<strong>Design:</strong> Y-Drop Pendant Necklace</li>\n<li dir=\"auto\" style=\"text-align: left;\">\n<strong>Color:</strong> Silver Tone / White Gold Finish</li>\n<li dir=\"auto\" style=\"text-align: left;\">\n<strong>Stone Type:</strong> High-Quality Crystal Stones</li>\n<li dir=\"auto\" style=\"text-align: left;\">\n<strong>Style:</strong> Luxury, Elegant, Feminine</li>\n<li dir=\"auto\" style=\"text-align: left;\">\n<strong>Occasion:</strong> Wedding, Party, Formal &amp; Festive Wear</li>\n</ul>",
+    "description": "<p dir=\"auto\">Make every moment memorable with our<strong> Teardrop Crystal Silver Tone Necklace</strong>, crafted for women who love sophisticated and graceful jewelry. Featuring a beautifully detailed V-shaped design with sparkling crystal stones and elegant teardrop pendants, this necklace adds a touch of glamour to any outfit.</p>\n<p dir=\"auto\">Designed with a premium-inspired finish, this necklace captures light beautifully, creating a radiant sparkle that complements both traditional and modern looks.</p>\n<p dir=\"auto\"> </p>\n<h4 dir=\"auto\">Product Details</h4>\n<ul>\n<li dir=\"auto\" style=\"text-align: left;\">\n<strong>Jewelry Type:</strong> Necklace</li>\n<li dir=\"auto\" style=\"text-align: left;\">\n<strong>Design:</strong> Y-Drop Pendant Necklace</li>\n<li dir=\"auto\" style=\"text-align: left;\">\n<strong>Color:</strong> Silver Tone / White Gold Finish</li>\n<li dir=\"auto\" style=\"text-align: left;\">\n<strong>Stone Type:</strong> High-Quality Crystal Stones</li>\n<li dir=\"auto\" style=\"text-align: left;\">\n<strong>Style:</strong> Luxury, Elegant, Feminine</li>\n<li dir=\"auto\" style=\"text-align: left;\">\n<strong>Occasion:</strong> Wedding, Party, Formal &amp; Festive Wear</li>\n</ul>",
     "badge": null,
     "availability": "in_stock",
     "featured": true,
@@ -91,7 +70,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     "gemstone": "High-Sparkle Brilliant Cut Crystal",
     "tags": [],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10002"
   },
   {
     "id": "moonlit-8429886898223",
@@ -109,7 +89,7 @@ export const INITIAL_PRODUCTS: Product[] = [
       "https://cdn.shopify.com/s/files/1/0772/0288/2607/files/Elegant_Crystal_Teardrop_Drop_Earrings_3.png?v=1787248914"
     ],
     "shortDescription": "Designed for women who love refined elegance, these crystal drop earrings feature a beautiful arrangement of three sparkling floral-inspired clusters leading into a brilliant pear-shaped brilliant stone.",
-    "description": "<p class=\"PDq2pG_selectionAnchorContainer\">Designed for women who love refined elegance, these crystal drop earrings feature a beautiful arrangement of three sparkling floral-inspired clusters leading into a brilliant pear-shaped brilliant stone. The detailed stone setting captures light beautifully, creating a luxurious shine from every angle.<span class=\"PDq2pG_selectionAnchor\"></span></p>\n<p>Perfect for weddings, festive occasions, parties, dinners, or adding a glamorous touch to your everyday style.</p>\n<hr>\n<h3>Features</h3>\n<p><strong>Premium Luxury Design</strong></p>\n<ul>\n<li>Elegant teardrop silhouette with a statement finish</li>\n<li>High-shine silver-tone metal setting</li>\n<li>Intricate pav\u00e9 crystal detailing for maximum brilliance</li>\n</ul>\n<p><strong>Brilliant Sparkle</strong></p>\n<ul>\n<li>Clear-cut stones reflect light beautifully</li>\n<li>Pear-shaped centerpiece adds a graceful feminine touch</li>\n<li>Designed to create a luxury jewellery look</li>\n</ul>\n<p><strong>Perfect for Every Occasion</strong></p>\n<ul>\n<li>Bridal &amp; wedding jewellery</li>\n<li>Party and evening wear</li>\n<li>Festive celebrations</li>\n<li>Elegant everyday styling</li>\n</ul>",
+    "description": "<p class=\"PDq2pG_selectionAnchorContainer\">Designed for women who love refined elegance, these crystal drop earrings feature a beautiful arrangement of three sparkling floral-inspired clusters leading into a brilliant pear-shaped brilliant stone. The detailed stone setting captures light beautifully, creating a luxurious shine from every angle.<span class=\"PDq2pG_selectionAnchor\"></span></p>\n<p>Perfect for weddings, festive occasions, parties, dinners, or adding a glamorous touch to your everyday style.</p>\n<hr>\n<h3>Features</h3>\n<p><strong>Premium Luxury Design</strong></p>\n<ul>\n<li>Elegant teardrop silhouette with a statement finish</li>\n<li>High-shine silver-tone metal setting</li>\n<li>Intricate pavé crystal detailing for maximum brilliance</li>\n</ul>\n<p><strong>Brilliant Sparkle</strong></p>\n<ul>\n<li>Clear-cut stones reflect light beautifully</li>\n<li>Pear-shaped centerpiece adds a graceful feminine touch</li>\n<li>Designed to create a luxury jewellery look</li>\n</ul>\n<p><strong>Perfect for Every Occasion</strong></p>\n<ul>\n<li>Bridal &amp; wedding jewellery</li>\n<li>Party and evening wear</li>\n<li>Festive celebrations</li>\n<li>Elegant everyday styling</li>\n</ul>",
     "badge": null,
     "availability": "in_stock",
     "featured": true,
@@ -118,11 +98,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     "gemstone": "High-Sparkle Brilliant Cut Crystal",
     "tags": [],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10003"
   },
   {
     "id": "moonlit-8429801111599",
-    "name": "Moonlit Jewelry Elegant Pear Drop Crystal Tennis Bracelet \u2013 Luxury Silver Tone Charm Bracelet",
+    "name": "Moonlit Jewelry Elegant Pear Drop Crystal Tennis Bracelet – Luxury Silver Tone Charm Bracelet",
     "handle": "tehreer-jewels-elegant-pear-drop-crystal-tennis-bracelet-luxury-silver-tone-charm-bracelet",
     "category": "Earrings & Studs",
     "price": 2899,
@@ -144,11 +125,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     "gemstone": "High-Sparkle Brilliant Cut Crystal",
     "tags": [],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10004"
   },
   {
     "id": "moonlit-8416780615727",
-    "name": "Moonlit Jewelry - Classic Pearl Drop Earrings with Crystal Stud \u2013 Gold Tone",
+    "name": "Moonlit Jewelry - Classic Pearl Drop Earrings with Crystal Stud – Gold Tone",
     "handle": "gold-tone-earrings",
     "category": "Bridal Jewelry",
     "price": 2999,
@@ -186,11 +168,12 @@ export const INITIAL_PRODUCTS: Product[] = [
       "women's jewelry"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10005"
   },
   {
     "id": "moonlit-8416756039727",
-    "name": "Moonlit Jewelry - Opalescent Square Drop Earrings \u2013 Silver Tone",
+    "name": "Moonlit Jewelry - Opalescent Square Drop Earrings – Silver Tone",
     "handle": "tehreer-jewels-opalescent-square-drop-earrings-silver-tone",
     "category": "Bridal Jewelry",
     "price": 3699,
@@ -228,11 +211,12 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Women's Earrings"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10006"
   },
   {
     "id": "moonlit-8416206192687",
-    "name": "Moonlit Jewelry - Amber Teardrop Floral Drop Earrings \u2013 Gold Tone",
+    "name": "Moonlit Jewelry - Amber Teardrop Floral Drop Earrings – Gold Tone",
     "handle": "tehreer-jewels-amber-teardrop-floral-drop-earrings-gold-tone",
     "category": "Wedding Bands & Rings",
     "price": 2899,
@@ -264,7 +248,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Moonlit Jewelry"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10007"
   },
   {
     "id": "moonlit-8416740900911",
@@ -282,7 +267,7 @@ export const INITIAL_PRODUCTS: Product[] = [
       "https://cdn.shopify.com/s/files/1/0772/0288/2607/files/Sparkling_Crystal_Butterfly_Wing_Statement_Earrings_3.png?v=1786377374"
     ],
     "shortDescription": "Refined sparkle to your look with these elegant Crystal Butterfly Statement Earrings .",
-    "description": "<p class=\"PDq2pG_selectionAnchorContainer\">Refined sparkle to your look with these elegant <strong>Crystal Butterfly Statement Earrings</strong>. Designed with a graceful butterfly-inspired silhouette, each earring features radiating tapered baguette-style clear stones framed by a sparkling pav\u00e9-style border.<span class=\"PDq2pG_selectionAnchor\"></span></p>\n<p>The openwork construction gives the design a light, dimensional appearance, while the polished silver-tone finish enhances the brilliance of every stone. The layered wing-like structure creates a sophisticated statement that feels glamorous without looking overly heavy.</p>\n<p>Perfect for weddings, engagement events, parties, dinners, festive occasions, and formal styling, these earrings are an eye-catching choice for anyone who loves elegant statement jewelry.</p>\n<p>\u00a0</p>\n<h4 class=\"PDq2pG_selectionAnchorContainer\">Product Highlights<span class=\"PDq2pG_selectionAnchor\"></span>\n</h4>\n<ul>\n<li>\n<strong>Style:</strong> Statement stud earrings</li>\n<li>\n<strong>Design:</strong> Butterfly Statement Earrings</li>\n<li>\n<strong>Stone Color:</strong> Clear</li>\n<li>\n<strong>Stone Shapes:</strong> Tapered baguette-style and round accents</li>\n<li>\n<strong>Detailing:</strong> Pav\u00e9-style sparkling border</li>\n<li>\n<strong>Metal Color:</strong> Silver tone</li>\n<li>\n<strong>Finish:</strong> Bright polished finish</li>\n<li>\n<strong>Construction:</strong> Dimensional openwork design</li>\n<li>\n<strong>Look:</strong> Elegant, glamorous and contemporary</li>\n<li>\n<strong>Occasions:</strong> Weddings, engagements, parties, formal events and festive wear</li>\n<li>\n<strong>For:</strong> Women</li>\n<li>\n<strong>Set Includes:</strong> 1 pair</li>\n</ul>",
+    "description": "<p class=\"PDq2pG_selectionAnchorContainer\">Refined sparkle to your look with these elegant <strong>Crystal Butterfly Statement Earrings</strong>. Designed with a graceful butterfly-inspired silhouette, each earring features radiating tapered baguette-style clear stones framed by a sparkling pavé-style border.<span class=\"PDq2pG_selectionAnchor\"></span></p>\n<p>The openwork construction gives the design a light, dimensional appearance, while the polished silver-tone finish enhances the brilliance of every stone. The layered wing-like structure creates a sophisticated statement that feels glamorous without looking overly heavy.</p>\n<p>Perfect for weddings, engagement events, parties, dinners, festive occasions, and formal styling, these earrings are an eye-catching choice for anyone who loves elegant statement jewelry.</p>\n<p> </p>\n<h4 class=\"PDq2pG_selectionAnchorContainer\">Product Highlights<span class=\"PDq2pG_selectionAnchor\"></span>\n</h4>\n<ul>\n<li>\n<strong>Style:</strong> Statement stud earrings</li>\n<li>\n<strong>Design:</strong> Butterfly Statement Earrings</li>\n<li>\n<strong>Stone Color:</strong> Clear</li>\n<li>\n<strong>Stone Shapes:</strong> Tapered baguette-style and round accents</li>\n<li>\n<strong>Detailing:</strong> Pavé-style sparkling border</li>\n<li>\n<strong>Metal Color:</strong> Silver tone</li>\n<li>\n<strong>Finish:</strong> Bright polished finish</li>\n<li>\n<strong>Construction:</strong> Dimensional openwork design</li>\n<li>\n<strong>Look:</strong> Elegant, glamorous and contemporary</li>\n<li>\n<strong>Occasions:</strong> Weddings, engagements, parties, formal events and festive wear</li>\n<li>\n<strong>For:</strong> Women</li>\n<li>\n<strong>Set Includes:</strong> 1 pair</li>\n</ul>",
     "badge": "Featured",
     "availability": "in_stock",
     "featured": true,
@@ -306,11 +291,12 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Women's Earrings"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10008"
   },
   {
     "id": "moonlit-8416317997103",
-    "name": "Moonlit Jewelry - Crystal Flower Drop Earrings \u2013 Silver Tone",
+    "name": "Moonlit Jewelry - Crystal Flower Drop Earrings – Silver Tone",
     "handle": "tehreer-jewels-crystal-flower-drop-earrings-silver-tone",
     "category": "Wedding Bands & Rings",
     "price": 4099,
@@ -338,11 +324,12 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Moonlit Jewelry"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10009"
   },
   {
     "id": "moonlit-8415650512943",
-    "name": "Moonlit Jewelry - Blue Round-Cut Eternity Band Ring \u2013 Silver Tone",
+    "name": "Moonlit Jewelry - Blue Round-Cut Eternity Band Ring – Silver Tone",
     "handle": "blue-round-cut-eternity-band-ring",
     "category": "Wedding Bands & Rings",
     "price": 3599,
@@ -378,11 +365,12 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Women's Ring"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10010"
   },
   {
     "id": "moonlit-8415661817903",
-    "name": "Moonlit Jewelry - Pink & Clear Triangle Eternity Band Ring \u2013 Silver Tone",
+    "name": "Moonlit Jewelry - Pink & Clear Triangle Eternity Band Ring – Silver Tone",
     "handle": "tehreer-jewels-pink-clear-triangle-eternity-band-ring",
     "category": "Wedding Bands & Rings",
     "price": 3899,
@@ -406,7 +394,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     "gemstone": "Fine Cut Crystal & Accents",
     "tags": [],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10011"
   },
   {
     "id": "moonlit-8402427871279",
@@ -424,7 +413,7 @@ export const INITIAL_PRODUCTS: Product[] = [
       "https://cdn.shopify.com/s/files/1/0772/0288/2607/files/BlueRing4.png?v=1785782484"
     ],
     "shortDescription": "Elevate your look with the Royal Azure Ring by Moonlit Jewelry.",
-    "description": "<p class=\"PDq2pG_selectionAnchorContainer\">Elevate your look with the Royal Azure Ring by Moonlit Jewelry. This elegant stainless steel ring features a vivid oval-cut blue centre stone surrounded by a sparkling halo of clear stones.<span class=\"PDq2pG_selectionAnchor\"></span></p>\n<p>Alternating blue and clear shoulder accents add extra brilliance to its polished silver-tone band. A beautiful statement piece for everyday elegance, celebrations, evening wear and thoughtful gifting.</p>\n<h3>Key Features</h3>\n<ul>\n<li>Durable stainless steel construction</li>\n<li>Oval-cut royal-blue centre stone</li>\n<li>Sparkling clear-stone halo</li>\n<li>Blue and clear shoulder accents</li>\n<li>Polished silver-tone finish</li>\n<li>Elegant statement design</li>\n<li>Suitable for everyday and occasion wear</li>\n</ul>\n<h3>Product Details</h3>\n<ul>\n<li>\n<strong>Brand:</strong> Moonlit Jewelry</li>\n<li>\n<strong>Material:</strong> Stainless Steel</li>\n<li>\n<strong>Centre Stone:</strong> Oval-cut blue stone</li>\n<li>\n<strong>Accent Stones:</strong> Blue and clear stones</li>\n<li>\n<strong>Setting:</strong> Halo setting</li>\n<li>\n<strong>Metal Colour:</strong> Silver</li>\n<li>\n<strong>Style:</strong> Statement / Occasion Ring</li>\n<li>\n<strong>Package Includes:</strong> 1 \u00d7 Ring</li>\n</ul>",
+    "description": "<p class=\"PDq2pG_selectionAnchorContainer\">Elevate your look with the Royal Azure Ring by Moonlit Jewelry. This elegant stainless steel ring features a vivid oval-cut blue centre stone surrounded by a sparkling halo of clear stones.<span class=\"PDq2pG_selectionAnchor\"></span></p>\n<p>Alternating blue and clear shoulder accents add extra brilliance to its polished silver-tone band. A beautiful statement piece for everyday elegance, celebrations, evening wear and thoughtful gifting.</p>\n<h3>Key Features</h3>\n<ul>\n<li>Durable stainless steel construction</li>\n<li>Oval-cut royal-blue centre stone</li>\n<li>Sparkling clear-stone halo</li>\n<li>Blue and clear shoulder accents</li>\n<li>Polished silver-tone finish</li>\n<li>Elegant statement design</li>\n<li>Suitable for everyday and occasion wear</li>\n</ul>\n<h3>Product Details</h3>\n<ul>\n<li>\n<strong>Brand:</strong> Moonlit Jewelry</li>\n<li>\n<strong>Material:</strong> Stainless Steel</li>\n<li>\n<strong>Centre Stone:</strong> Oval-cut blue stone</li>\n<li>\n<strong>Accent Stones:</strong> Blue and clear stones</li>\n<li>\n<strong>Setting:</strong> Halo setting</li>\n<li>\n<strong>Metal Colour:</strong> Silver</li>\n<li>\n<strong>Style:</strong> Statement / Occasion Ring</li>\n<li>\n<strong>Package Includes:</strong> 1 × Ring</li>\n</ul>",
     "badge": null,
     "availability": "made_to_order",
     "featured": false,
@@ -441,10 +430,11 @@ export const INITIAL_PRODUCTS: Product[] = [
       "stainless steel ring",
       "statement ring",
       "Moonlit Jewelry",
-      "Women\u2019s Ring"
+      "Women’s Ring"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10012"
   },
   {
     "id": "moonlit-8403497123887",
@@ -462,7 +452,7 @@ export const INITIAL_PRODUCTS: Product[] = [
       "https://cdn.shopify.com/s/files/1/0772/0288/2607/files/White_Stone_Ring_5.png?v=1785943015"
     ],
     "shortDescription": "Make an unforgettable statement with the Celeste Ring by Moonlit Jewelry.",
-    "description": "<p class=\"PDq2pG_selectionAnchorContainer\">Make an unforgettable statement with the Celeste Ring by Moonlit Jewelry. This sophisticated stainless steel ring features a brilliant emerald-cut clear centre stone, beautifully framed by two sparkling triangular side stones.<span class=\"PDq2pG_selectionAnchor\"></span></p>\n<p>Its polished silver-tone band and timeless three-stone setting create an elegant look for celebrations, evening wear, engagements and meaningful gifting.</p>\n<h3>Key Features</h3>\n<ul>\n<li>Durable stainless steel construction</li>\n<li>Large emerald-cut clear centre stone</li>\n<li>Two triangular-cut clear side stones</li>\n<li>Elegant three-stone setting</li>\n<li>Polished silver-tone finish</li>\n<li>Slim and comfortable band</li>\n<li>Suitable for everyday and occasion wear</li>\n</ul>\n<h3>Product Details</h3>\n<ul>\n<li>\n<strong>Brand:</strong> Moonlit Jewelry</li>\n<li>\n<strong>Material:</strong> Stainless Steel</li>\n<li>\n<strong>Metal Colour:</strong> Silver Tone</li>\n<li>\n<strong>Centre Stone:</strong> Emerald-cut clear stone</li>\n<li>\n<strong>Side Stones:</strong> Two triangular-cut clear stones</li>\n<li>\n<strong>Setting Style:</strong> Three-stone prong setting</li>\n<li>\n<strong>Band Style:</strong> Slim polished band</li>\n<li>\n<strong>Ring Style:</strong> Statement / Occasion Ring</li>\n<li>\n<strong>Package Includes:</strong> 1 \u00d7 Ring</li>\n</ul>",
+    "description": "<p class=\"PDq2pG_selectionAnchorContainer\">Make an unforgettable statement with the Celeste Ring by Moonlit Jewelry. This sophisticated stainless steel ring features a brilliant emerald-cut clear centre stone, beautifully framed by two sparkling triangular side stones.<span class=\"PDq2pG_selectionAnchor\"></span></p>\n<p>Its polished silver-tone band and timeless three-stone setting create an elegant look for celebrations, evening wear, engagements and meaningful gifting.</p>\n<h3>Key Features</h3>\n<ul>\n<li>Durable stainless steel construction</li>\n<li>Large emerald-cut clear centre stone</li>\n<li>Two triangular-cut clear side stones</li>\n<li>Elegant three-stone setting</li>\n<li>Polished silver-tone finish</li>\n<li>Slim and comfortable band</li>\n<li>Suitable for everyday and occasion wear</li>\n</ul>\n<h3>Product Details</h3>\n<ul>\n<li>\n<strong>Brand:</strong> Moonlit Jewelry</li>\n<li>\n<strong>Material:</strong> Stainless Steel</li>\n<li>\n<strong>Metal Colour:</strong> Silver Tone</li>\n<li>\n<strong>Centre Stone:</strong> Emerald-cut clear stone</li>\n<li>\n<strong>Side Stones:</strong> Two triangular-cut clear stones</li>\n<li>\n<strong>Setting Style:</strong> Three-stone prong setting</li>\n<li>\n<strong>Band Style:</strong> Slim polished band</li>\n<li>\n<strong>Ring Style:</strong> Statement / Occasion Ring</li>\n<li>\n<strong>Package Includes:</strong> 1 × Ring</li>\n</ul>",
     "badge": null,
     "availability": "in_stock",
     "featured": false,
@@ -480,14 +470,15 @@ export const INITIAL_PRODUCTS: Product[] = [
       "statement ring",
       "Moonlit Jewelry",
       "Three Stone Ring",
-      "Women\u2019s Ring"
+      "Women’s Ring"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10013"
   },
   {
     "id": "moonlit-8402480955439",
-    "name": "Moonlit Jewelry - Pearl Lumi\u00e8re Oval Stone Gold-Tone Stainless Steel Ring",
+    "name": "Moonlit Jewelry - Pearl Lumière Oval Stone Gold-Tone Stainless Steel Ring",
     "handle": "tehreer-jewels-pearl-lumiere-oval-stone-gold-tone-stainless-steel-ring",
     "category": "Bridal Jewelry",
     "price": 3199,
@@ -500,8 +491,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "https://cdn.shopify.com/s/files/1/0772/0288/2607/files/exec-fd535c4c-ee35-4688-8c20-d27aa4520636.png?v=1785785886",
       "https://cdn.shopify.com/s/files/1/0772/0288/2607/files/Women_Wear_this_ring.png?v=1785786168"
     ],
-    "shortDescription": "Delicate pearls meet timeless sparkle in the Pearl Lumi\u00e8re Ring by Moonlit Jewelry.",
-    "description": "<p>Delicate pearls meet timeless sparkle in the Pearl Lumi\u00e8re Ring by Moonlit Jewelry. This elegant gold-tone stainless steel ring features a brilliant oval-cut clear centre stone, complemented by graceful rows of white pearl accents along both shoulders.</p>\n<p>Its open adjustable design offers a flexible and comfortable fit, making it a refined choice for everyday elegance, celebrations, bridal looks and thoughtful gifting.</p>\n<h3>Key Features</h3>\n<ul>\n<li>Durable stainless steel construction</li>\n<li>Elegant gold-tone polished finish</li>\n<li>Oval-cut clear centre stone</li>\n<li>Delicate white pearl shoulder accents</li>\n<li>Open adjustable band</li>\n<li>Lightweight and comfortable design</li>\n<li>Suitable for everyday and occasion wear</li>\n</ul>\n<h3>Product Details</h3>\n<ul>\n<li>\n<strong>Brand:</strong> Moonlit Jewelry</li>\n<li>\n<strong>Material:</strong> Stainless Steel</li>\n<li>\n<strong>Finish:</strong> Gold Tone</li>\n<li>\n<strong>Centre Stone:</strong> Oval-cut clear stone</li>\n<li>\n<strong>Side Detailing:</strong> White pearl-style accents</li>\n<li>\n<strong>Band Style:</strong> Open and adjustable</li>\n<li>\n<strong>Ring Style:</strong> Elegant / Statement Ring</li>\n<li>\n<strong>Package Includes:</strong> 1 \u00d7 Ring</li>\n</ul>",
+    "shortDescription": "Delicate pearls meet timeless sparkle in the Pearl Lumière Ring by Moonlit Jewelry.",
+    "description": "<p>Delicate pearls meet timeless sparkle in the Pearl Lumière Ring by Moonlit Jewelry. This elegant gold-tone stainless steel ring features a brilliant oval-cut clear centre stone, complemented by graceful rows of white pearl accents along both shoulders.</p>\n<p>Its open adjustable design offers a flexible and comfortable fit, making it a refined choice for everyday elegance, celebrations, bridal looks and thoughtful gifting.</p>\n<h3>Key Features</h3>\n<ul>\n<li>Durable stainless steel construction</li>\n<li>Elegant gold-tone polished finish</li>\n<li>Oval-cut clear centre stone</li>\n<li>Delicate white pearl shoulder accents</li>\n<li>Open adjustable band</li>\n<li>Lightweight and comfortable design</li>\n<li>Suitable for everyday and occasion wear</li>\n</ul>\n<h3>Product Details</h3>\n<ul>\n<li>\n<strong>Brand:</strong> Moonlit Jewelry</li>\n<li>\n<strong>Material:</strong> Stainless Steel</li>\n<li>\n<strong>Finish:</strong> Gold Tone</li>\n<li>\n<strong>Centre Stone:</strong> Oval-cut clear stone</li>\n<li>\n<strong>Side Detailing:</strong> White pearl-style accents</li>\n<li>\n<strong>Band Style:</strong> Open and adjustable</li>\n<li>\n<strong>Ring Style:</strong> Elegant / Statement Ring</li>\n<li>\n<strong>Package Includes:</strong> 1 × Ring</li>\n</ul>",
     "badge": null,
     "availability": "in_stock",
     "featured": false,
@@ -519,10 +510,11 @@ export const INITIAL_PRODUCTS: Product[] = [
       "stainless steel ring",
       "statement ring",
       "Moonlit Jewelry",
-      "Women\u2019s Ring"
+      "Women’s Ring"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10014"
   },
   {
     "id": "moonlit-8383879381039",
@@ -549,7 +541,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     "gemstone": "Fine Cut Crystal & Accents",
     "tags": [],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10015"
   },
   {
     "id": "moonlit-8383789924399",
@@ -587,7 +580,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "women ring"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10016"
   },
   {
     "id": "moonlit-8383731171375",
@@ -614,7 +608,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     "gemstone": "Pigeon Blood Ruby",
     "tags": [],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10017"
   },
   {
     "id": "moonlit-8383713837103",
@@ -632,7 +627,7 @@ export const INITIAL_PRODUCTS: Product[] = [
       "https://cdn.shopify.com/s/files/1/0772/0288/2607/files/Tehreer_Jewels_925_sterling_silver_ring_featuring_a_deep_blue_round_center_stone.png?v=1785090124"
     ],
     "shortDescription": "Product Details Brand: Moonlit Jewelry Design: Royal Blue Statement Ring Centre Stone: Round-cut blue stone Stone Colour: Deep Royal Blue Accent Stones: Clear sparkling stones Band Colour: Silver Material: Sterling Silver Marking: Moonlit 925 Setting: Prong setting Style: Elegant / Classic / Luxury-inspired For: Women Occasions: Parties, weddings, dinners, festive wear, gifting &amp; special occasions.",
-    "description": "<div style=\"text-align: center;\"><img src=\"https://cdn.shopify.com/s/files/1/0772/0288/2607/files/Moonlit_Blue_Ring_Unstretched_With_Bottom_Gap.png?v=1785578985\" alt=\"Moonlit Jewelry 925 sterling silver ring with a round blue stone, four-prong setting and clear side accents for everyday wear and gifting\" style=\"margin-bottom: 16px; float: none;\"></div>\n<h3>Product Details</h3>\n<p><strong>Brand:</strong> Moonlit Jewelry<br><strong>Design:</strong> Royal Blue Statement Ring<br><strong>Centre Stone:</strong> Round-cut blue stone<br><strong>Stone Colour:</strong> Deep Royal Blue<br><strong>Accent Stones:</strong> Clear sparkling stones<br><strong>Band Colour:</strong> Silver<br><strong>Material:</strong> Sterling\u00a0Silver<br><strong>Marking:</strong> Moonlit 925<br><strong>Setting:</strong> Prong setting<br><strong>Style:</strong> Elegant / Classic / Luxury-inspired<br><strong>For:</strong> Women<br><strong>Occasions:</strong> Parties, weddings, dinners, festive wear, gifting &amp; special occasions</p>",
+    "description": "<div style=\"text-align: center;\"><img src=\"https://cdn.shopify.com/s/files/1/0772/0288/2607/files/Moonlit_Blue_Ring_Unstretched_With_Bottom_Gap.png?v=1785578985\" alt=\"Moonlit Jewelry 925 sterling silver ring with a round blue stone, four-prong setting and clear side accents for everyday wear and gifting\" style=\"margin-bottom: 16px; float: none;\"></div>\n<h3>Product Details</h3>\n<p><strong>Brand:</strong> Moonlit Jewelry<br><strong>Design:</strong> Royal Blue Statement Ring<br><strong>Centre Stone:</strong> Round-cut blue stone<br><strong>Stone Colour:</strong> Deep Royal Blue<br><strong>Accent Stones:</strong> Clear sparkling stones<br><strong>Band Colour:</strong> Silver<br><strong>Material:</strong> Sterling Silver<br><strong>Marking:</strong> Moonlit 925<br><strong>Setting:</strong> Prong setting<br><strong>Style:</strong> Elegant / Classic / Luxury-inspired<br><strong>For:</strong> Women<br><strong>Occasions:</strong> Parties, weddings, dinners, festive wear, gifting &amp; special occasions</p>",
     "badge": null,
     "availability": "in_stock",
     "featured": false,
@@ -641,7 +636,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     "gemstone": "Fine Cut Crystal & Accents",
     "tags": [],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10018"
   },
   {
     "id": "moonlit-8383616090159",
@@ -668,7 +664,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     "gemstone": "Fine Cut Crystal & Accents",
     "tags": [],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10019"
   },
   {
     "id": "moonlit-8383582109743",
@@ -686,7 +683,7 @@ export const INITIAL_PRODUCTS: Product[] = [
       "https://cdn.shopify.com/s/files/1/0772/0288/2607/files/Emerald_Green_Square.jpg?v=1786879371"
     ],
     "shortDescription": "Product Details Brand: Moonlit Jewelry Style: Statement / Elegant / Modern Colour: Silver &amp; Emerald Green Centre Stone Shape: Square Cut Centre Stone Colour: Emerald Green Accent Stones: Clear geometric-cut stones Band Finish: 925 Silver Sterling Marking: Moonlit 925 Setting: Prong-set For: Women Occasions: Weddings, parties, festive wear, dinners, gifting &amp; everyday elegance.",
-    "description": "<div style=\"text-align: center;\"><img src=\"https://cdn.shopify.com/s/files/1/0772/0288/2607/files/Green_925_Silver_Stone_Ring.png?v=1785528687\" alt=\"Moonlit Jewelry emerald-green stone 925 sterling silver statement ring with sparkling white side stones, shown in a mobile-friendly jewellery guide.\" style=\"float: none;\"></div>\n<h3>Product Details</h3>\n<p><strong>Brand:</strong> Moonlit Jewelry<br><strong>Style:</strong> Statement / Elegant / Modern<br><strong>Colour:</strong> Silver &amp; Emerald Green<br><strong>Centre Stone Shape:</strong> Square Cut<br><strong>Centre Stone Colour:</strong> Emerald Green<br><strong>Accent Stones:</strong> Clear geometric-cut stones<br><strong>Band Finish:</strong> 925 Silver Sterling<br><strong>Marking: </strong>Moonlit\u00a0925<br><strong>Setting:</strong> Prong-set<br><strong>For:</strong> Women<br><strong>Occasions:</strong> Weddings, parties, festive wear, dinners, gifting &amp; everyday elegance</p>",
+    "description": "<div style=\"text-align: center;\"><img src=\"https://cdn.shopify.com/s/files/1/0772/0288/2607/files/Green_925_Silver_Stone_Ring.png?v=1785528687\" alt=\"Moonlit Jewelry emerald-green stone 925 sterling silver statement ring with sparkling white side stones, shown in a mobile-friendly jewellery guide.\" style=\"float: none;\"></div>\n<h3>Product Details</h3>\n<p><strong>Brand:</strong> Moonlit Jewelry<br><strong>Style:</strong> Statement / Elegant / Modern<br><strong>Colour:</strong> Silver &amp; Emerald Green<br><strong>Centre Stone Shape:</strong> Square Cut<br><strong>Centre Stone Colour:</strong> Emerald Green<br><strong>Accent Stones:</strong> Clear geometric-cut stones<br><strong>Band Finish:</strong> 925 Silver Sterling<br><strong>Marking: </strong>Moonlit 925<br><strong>Setting:</strong> Prong-set<br><strong>For:</strong> Women<br><strong>Occasions:</strong> Weddings, parties, festive wear, dinners, gifting &amp; everyday elegance</p>",
     "badge": null,
     "availability": "in_stock",
     "featured": false,
@@ -695,7 +692,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     "gemstone": "Natural Emerald & Green Onyx",
     "tags": [],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10020"
   },
   {
     "id": "moonlit-8383570444335",
@@ -723,7 +721,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     "gemstone": "Natural Emerald & Green Onyx",
     "tags": [],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10021"
   },
   {
     "id": "moonlit-8383556911151",
@@ -750,7 +749,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     "gemstone": "Natural Emerald & Green Onyx",
     "tags": [],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10022"
   },
   {
     "id": "moonlit-8332074025007",
@@ -784,7 +784,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "women's bracelet"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10023"
   },
   {
     "id": "moonlit-8332038930479",
@@ -817,7 +818,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "women's fashion jewelry"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10024"
   },
   {
     "id": "moonlit-8329165340719",
@@ -849,11 +851,12 @@ export const INITIAL_PRODUCTS: Product[] = [
       "women's jewelry"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10025"
   },
   {
     "id": "moonlit-8329142665263",
-    "name": "Moonlit Jewelry Five Clover Charm Bracelet |\u00a0Black & White Gold Stainless",
+    "name": "Moonlit Jewelry Five Clover Charm Bracelet | Black & White Gold Stainless",
     "handle": "clover-motif-black-white-charm-bracelet-gold-stainless-steel",
     "category": "Bangles & Bracelets",
     "price": 2599,
@@ -865,7 +868,7 @@ export const INITIAL_PRODUCTS: Product[] = [
       "https://cdn.shopify.com/s/files/1/0772/0288/2607/files/ChatGPT_Image_Jul_22_2026_11_48_47_PM.png?v=1784746183"
     ],
     "shortDescription": "Elevate your everyday style with this elegant clover motif bracelet.",
-    "description": "<p class=\"font-claude-response-body break-words whitespace-normal\">Elevate your everyday style with this elegant clover motif bracelet. Five beautifully crafted four-leaf clover charms \u2014 alternating between rich black and classic white \u2014 are spaced gracefully along a fine gold-tone stainless steel chain, creating a look that's both playful and polished.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">Each clover charm is bordered with a delicate beaded gold edge, adding subtle texture and vintage-inspired detail. The bracelet fastens securely with a lobster clasp and includes an adjustable extender chain, ensuring a comfortable, customizable fit for any wrist size.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">Crafted from tarnish-resistant, hypoallergenic gold-tone stainless steel, this bracelet is designed to be worn daily without losing its shine. Perfect for stacking with other bracelets or wearing solo as an understated statement piece.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">\u00a0</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\"><strong>Bullet Points:</strong></p>\n<ul class=\"[li_&amp;]:mb-0 [li_&amp;]:mt-1 [li_&amp;]:gap-1 [&amp;:not(:last-child)_ul]:pb-1 [&amp;:not(:last-child)_ol]:pb-1 list-disc flex flex-col gap-1 pl-8 mb-3\">\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">\ud83c\udf40 <strong>Charms:</strong> 5 four-leaf clover charms, alternating black &amp; white</li>\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">\u2728 <strong>Chain:</strong> Delicate cable-link chain in gold-tone finish</li>\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">\ud83d\udd12 <strong>Closure:</strong> Lobster clasp with adjustable extender chain</li>\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">\ud83c\udfc5 <strong>Metal:</strong> Gold-tone stainless steel, tarnish-resistant &amp; hypoallergenic</li>\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">\ud83d\udcab <strong>Style:</strong> Classic clover motif, everyday elegant</li>\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">\ud83c\udf81 <strong>Perfect For:</strong> Gifts, stacking bracelets, daily wear</li>\n</ul>",
+    "description": "<p class=\"font-claude-response-body break-words whitespace-normal\">Elevate your everyday style with this elegant clover motif bracelet. Five beautifully crafted four-leaf clover charms — alternating between rich black and classic white — are spaced gracefully along a fine gold-tone stainless steel chain, creating a look that's both playful and polished.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">Each clover charm is bordered with a delicate beaded gold edge, adding subtle texture and vintage-inspired detail. The bracelet fastens securely with a lobster clasp and includes an adjustable extender chain, ensuring a comfortable, customizable fit for any wrist size.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">Crafted from tarnish-resistant, hypoallergenic gold-tone stainless steel, this bracelet is designed to be worn daily without losing its shine. Perfect for stacking with other bracelets or wearing solo as an understated statement piece.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\"> </p>\n<p class=\"font-claude-response-body break-words whitespace-normal\"><strong>Bullet Points:</strong></p>\n<ul class=\"[li_&amp;]:mb-0 [li_&amp;]:mt-1 [li_&amp;]:gap-1 [&amp;:not(:last-child)_ul]:pb-1 [&amp;:not(:last-child)_ol]:pb-1 list-disc flex flex-col gap-1 pl-8 mb-3\">\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">🍀 <strong>Charms:</strong> 5 four-leaf clover charms, alternating black &amp; white</li>\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">✨ <strong>Chain:</strong> Delicate cable-link chain in gold-tone finish</li>\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">🔒 <strong>Closure:</strong> Lobster clasp with adjustable extender chain</li>\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">🏅 <strong>Metal:</strong> Gold-tone stainless steel, tarnish-resistant &amp; hypoallergenic</li>\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">💫 <strong>Style:</strong> Classic clover motif, everyday elegant</li>\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">🎁 <strong>Perfect For:</strong> Gifts, stacking bracelets, daily wear</li>\n</ul>",
     "badge": "New Arrival",
     "availability": "in_stock",
     "featured": false,
@@ -887,11 +890,12 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Moonlit Jewelry"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10026"
   },
   {
     "id": "moonlit-8323445456943",
-    "name": "Moonlit Jewelry \u2013 Pink Pearlescent Crystal Drop Earrings \u2013 Silver Tone",
+    "name": "Moonlit Jewelry – Pink Pearlescent Crystal Drop Earrings – Silver Tone",
     "handle": "tehreer-jewels-white-stone-silver-coating-pink-square-earrings",
     "category": "Bridal Jewelry",
     "price": 3199,
@@ -936,7 +940,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "women's jewelry"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10027"
   },
   {
     "id": "moonlit-8323437559855",
@@ -955,7 +960,7 @@ export const INITIAL_PRODUCTS: Product[] = [
       "https://cdn.shopify.com/s/files/1/0772/0288/2607/files/ChatGPTImageJun27_2026_09_41_52PM.png?v=1782578646"
     ],
     "shortDescription": "Add timeless elegance to your jewelry collection with this stunning Emerald Green Teardrop Necklace &amp; Earrings Set .",
-    "description": "<p data-start=\"279\" data-end=\"620\" class=\"PDq2pG_selectionAnchorContainer\">Add timeless elegance to your jewelry collection with this stunning <strong data-start=\"347\" data-end=\"397\">Emerald Green Teardrop Necklace &amp; Earrings Set</strong>. Designed with brilliant emerald-green cubic zirconia stones and surrounded by sparkling clear crystals, this luxurious jewelry set is perfect for weddings, engagements, parties, Eid, formal dinners, and special occasions.<span aria-hidden=\"true\" class=\"PDq2pG_selectionAnchor\"></span></p>\n<p data-start=\"622\" data-end=\"926\">Crafted with a premium silver-tone finish, the elegant teardrop pendant and matching earrings create a sophisticated look that complements both traditional and western outfits. Whether you're treating yourself or searching for the perfect gift, this jewelry set offers classic beauty and lasting sparkle.</p>\n<h4 data-section-id=\"1j5qwet\" data-start=\"933\" data-end=\"952\" class=\"PDq2pG_selectionAnchorContainer\"><span role=\"text\"><strong data-start=\"936\" data-end=\"952\"></strong></span></h4>\n<h4 data-section-id=\"1j5qwet\" data-start=\"933\" data-end=\"952\" class=\"PDq2pG_selectionAnchorContainer\">\n<span role=\"text\"><strong data-start=\"936\" data-end=\"952\">Features:</strong></span><span aria-hidden=\"true\" class=\"PDq2pG_selectionAnchor\"></span>\n</h4>\n<p data-start=\"954\" data-end=\"990\" class=\"\">\u2714 Premium-quality silver-tone finish</p>\n<p data-start=\"992\" data-end=\"1039\">\u2714 Sparkling emerald green cubic zirconia stones</p>\n<p data-start=\"1041\" data-end=\"1074\">\u2714 Elegant teardrop pendant design</p>\n<p data-start=\"1076\" data-end=\"1104\">\u2714 Matching earrings included</p>\n<p data-start=\"1106\" data-end=\"1152\">\u2714 Lightweight and comfortable for all-day wear</p>\n<p data-start=\"1154\" data-end=\"1213\">\u2714 Perfect for weddings, parties, engagements, Eid &amp; gifting</p>\n<p data-start=\"1215\" data-end=\"1257\">\u2714 Suitable for formal and casual occasions</p>\n<p data-start=\"1259\" data-end=\"1299\">\u2714 Tarnish-resistant with brilliant shine</p>",
+    "description": "<p data-start=\"279\" data-end=\"620\" class=\"PDq2pG_selectionAnchorContainer\">Add timeless elegance to your jewelry collection with this stunning <strong data-start=\"347\" data-end=\"397\">Emerald Green Teardrop Necklace &amp; Earrings Set</strong>. Designed with brilliant emerald-green cubic zirconia stones and surrounded by sparkling clear crystals, this luxurious jewelry set is perfect for weddings, engagements, parties, Eid, formal dinners, and special occasions.<span aria-hidden=\"true\" class=\"PDq2pG_selectionAnchor\"></span></p>\n<p data-start=\"622\" data-end=\"926\">Crafted with a premium silver-tone finish, the elegant teardrop pendant and matching earrings create a sophisticated look that complements both traditional and western outfits. Whether you're treating yourself or searching for the perfect gift, this jewelry set offers classic beauty and lasting sparkle.</p>\n<h4 data-section-id=\"1j5qwet\" data-start=\"933\" data-end=\"952\" class=\"PDq2pG_selectionAnchorContainer\"><span role=\"text\"><strong data-start=\"936\" data-end=\"952\"></strong></span></h4>\n<h4 data-section-id=\"1j5qwet\" data-start=\"933\" data-end=\"952\" class=\"PDq2pG_selectionAnchorContainer\">\n<span role=\"text\"><strong data-start=\"936\" data-end=\"952\">Features:</strong></span><span aria-hidden=\"true\" class=\"PDq2pG_selectionAnchor\"></span>\n</h4>\n<p data-start=\"954\" data-end=\"990\" class=\"\">✔ Premium-quality silver-tone finish</p>\n<p data-start=\"992\" data-end=\"1039\">✔ Sparkling emerald green cubic zirconia stones</p>\n<p data-start=\"1041\" data-end=\"1074\">✔ Elegant teardrop pendant design</p>\n<p data-start=\"1076\" data-end=\"1104\">✔ Matching earrings included</p>\n<p data-start=\"1106\" data-end=\"1152\">✔ Lightweight and comfortable for all-day wear</p>\n<p data-start=\"1154\" data-end=\"1213\">✔ Perfect for weddings, parties, engagements, Eid &amp; gifting</p>\n<p data-start=\"1215\" data-end=\"1257\">✔ Suitable for formal and casual occasions</p>\n<p data-start=\"1259\" data-end=\"1299\">✔ Tarnish-resistant with brilliant shine</p>",
     "badge": null,
     "availability": "in_stock",
     "featured": false,
@@ -970,13 +975,14 @@ export const INITIAL_PRODUCTS: Product[] = [
       "necklace"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10028"
   },
   {
     "id": "moonlit-8323039952943",
     "name": "Moonlit Jewelry - Premium Sterling Silver, Pendant Necklace Set For Women",
     "handle": "premium-sterling-silver-oval-cut-cubic-zirconia-pendant-necklace-topes-set",
-    "category": "Necklaces",
+    "category": "endants & Necklace",
     "price": 3199,
     "originalPrice": 3679,
     "currency": "PKR",
@@ -992,7 +998,7 @@ export const INITIAL_PRODUCTS: Product[] = [
       "https://cdn.shopify.com/s/files/1/0772/0288/2607/files/Artboard_24.jpg?v=1785424788"
     ],
     "shortDescription": "Our Luxury Oval Cut Halo Jewelry Set .",
-    "description": "<p data-path-to-node=\"9\">Our <b data-path-to-node=\"9\" data-index-in-node=\"65\">Luxury Oval Cut Halo Jewelry Set</b>. Designed to elevate both your everyday attire and your most memorable evening wear, this matching necklace and earring set is the epitome of effortless grace.</p>\n<p data-path-to-node=\"10\">The centerpieces showcase a magnificent, brilliant-cut oval stone nested securely within an ornate, shimmering halo border. The pendant hangs elegantly from a sleek, polished box chain that rests perfectly against the collarbone, while the matching studs frame the face with a delicate, eye-catching radiance. Whether you are walking down the aisle, attending a gala, or treating yourself to a well-deserved touch of luxury, this set delivers a flawless, high-end aesthetic that never goes out of style.</p>\n<p data-path-to-node=\"10\">\u00a0</p>\n<h4 data-path-to-node=\"5\"><b data-path-to-node=\"5\" data-index-in-node=\"0\">Features:</b></h4>\n<ul data-path-to-node=\"6\">\n<li>\n<p data-path-to-node=\"6,0,0\"><strong>Stunning Timeless Design:</strong> This exquisite jewelry set features a matching oval-cut halo pendant and stud earrings, meticulously crafted to catch the light beautifully from every angle.</p>\n</li>\n<li>\n<p data-path-to-node=\"6,1,0\"><b data-path-to-node=\"6,1,0\" data-index-in-node=\"0\">Brilliant Craftsmanship:</b> Encircled by a pave setting of brilliant accent stones and featuring an intricate vintage-inspired openwork gallery, this set blends classic romance with modern sophistication.</p>\n</li>\n<li>\n<p data-path-to-node=\"6,2,0\"><b data-path-to-node=\"6,2,0\" data-index-in-node=\"0\">Premium Quality Materials:</b> Made with high-polished, tarnish-resistant sterling silver plating and premium AAA+ cubic zirconia stones for a luxury, diamond-like sparkle without the heavy price tag.</p>\n</li>\n<li>\n<p data-path-to-node=\"6,3,0\"><b data-path-to-node=\"6,3,0\" data-index-in-node=\"0\">Comfortable &amp; Secure Fit:</b> The necklace comes with a durable, smooth box chain and a secure clasp, while the matching stud earrings feature comfortable post-backs designed for all-day wear.</p>\n</li>\n<li>\n<p data-path-to-node=\"6,4,0\"><b data-path-to-node=\"6,4,0\" data-index-in-node=\"0\">The Perfect Gift:</b> Packaged beautifully and ready for gifting, it makes a breathtaking surprise for weddings, anniversaries, birthdays, Mother\u2019s Day, or any special milestone.</p>\n</li>\n</ul>",
+    "description": "<p data-path-to-node=\"9\">Our <b data-path-to-node=\"9\" data-index-in-node=\"65\">Luxury Oval Cut Halo Jewelry Set</b>. Designed to elevate both your everyday attire and your most memorable evening wear, this matching necklace and earring set is the epitome of effortless grace.</p>\n<p data-path-to-node=\"10\">The centerpieces showcase a magnificent, brilliant-cut oval stone nested securely within an ornate, shimmering halo border. The pendant hangs elegantly from a sleek, polished box chain that rests perfectly against the collarbone, while the matching studs frame the face with a delicate, eye-catching radiance. Whether you are walking down the aisle, attending a gala, or treating yourself to a well-deserved touch of luxury, this set delivers a flawless, high-end aesthetic that never goes out of style.</p>\n<p data-path-to-node=\"10\"> </p>\n<h4 data-path-to-node=\"5\"><b data-path-to-node=\"5\" data-index-in-node=\"0\">Features:</b></h4>\n<ul data-path-to-node=\"6\">\n<li>\n<p data-path-to-node=\"6,0,0\"><strong>Stunning Timeless Design:</strong> This exquisite jewelry set features a matching oval-cut halo pendant and stud earrings, meticulously crafted to catch the light beautifully from every angle.</p>\n</li>\n<li>\n<p data-path-to-node=\"6,1,0\"><b data-path-to-node=\"6,1,0\" data-index-in-node=\"0\">Brilliant Craftsmanship:</b> Encircled by a pave setting of brilliant accent stones and featuring an intricate vintage-inspired openwork gallery, this set blends classic romance with modern sophistication.</p>\n</li>\n<li>\n<p data-path-to-node=\"6,2,0\"><b data-path-to-node=\"6,2,0\" data-index-in-node=\"0\">Premium Quality Materials:</b> Made with high-polished, tarnish-resistant sterling silver plating and premium AAA+ cubic zirconia stones for a luxury, diamond-like sparkle without the heavy price tag.</p>\n</li>\n<li>\n<p data-path-to-node=\"6,3,0\"><b data-path-to-node=\"6,3,0\" data-index-in-node=\"0\">Comfortable &amp; Secure Fit:</b> The necklace comes with a durable, smooth box chain and a secure clasp, while the matching stud earrings feature comfortable post-backs designed for all-day wear.</p>\n</li>\n<li>\n<p data-path-to-node=\"6,4,0\"><b data-path-to-node=\"6,4,0\" data-index-in-node=\"0\">The Perfect Gift:</b> Packaged beautifully and ready for gifting, it makes a breathtaking surprise for weddings, anniversaries, birthdays, Mother’s Day, or any special milestone.</p>\n</li>\n</ul>",
     "badge": "Featured",
     "availability": "in_stock",
     "featured": false,
@@ -1001,11 +1007,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     "gemstone": "High-Sparkle Brilliant Cut Crystal",
     "tags": [],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10029"
   },
   {
     "id": "moonlit-8323031040047",
-    "name": "Moonlit Jewelry \u2013 Elegant Twisted Double Hoop Earrings \u2013 Gold Tone",
+    "name": "Moonlit Jewelry – Elegant Twisted Double Hoop Earrings – Gold Tone",
     "handle": "elegant-twisted-double-hoop-earrings-for-women",
     "category": "Wedding Bands & Rings",
     "price": 2399,
@@ -1042,11 +1049,12 @@ export const INITIAL_PRODUCTS: Product[] = [
       "women's jewelry"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10030"
   },
   {
     "id": "moonlit-8322605711407",
-    "name": "Moonlit Jewelry - Black Crystal Spike Drop Earrings \u2013 Silver Tone",
+    "name": "Moonlit Jewelry - Black Crystal Spike Drop Earrings – Silver Tone",
     "handle": "tehreer-jewels-noir-vela-black-drop-earrings",
     "category": "Wedding Bands & Rings",
     "price": 3599,
@@ -1085,7 +1093,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Women's Earrings"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10031"
   },
   {
     "id": "moonlit-8322557968431",
@@ -1129,11 +1138,12 @@ export const INITIAL_PRODUCTS: Product[] = [
       "women ring"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10032"
   },
   {
     "id": "moonlit-8321638268975",
-    "name": "Moonlit Jewelry White Faceted Square Drop Earrings \u2013 Silver Tone",
+    "name": "Moonlit Jewelry White Faceted Square Drop Earrings – Silver Tone",
     "handle": "silver-square-crystal-drop-earrings-for-women-elegant-statement-earrings",
     "category": "Bridal Jewelry",
     "price": 3299,
@@ -1175,7 +1185,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Womens Jewelry"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10033"
   },
   {
     "id": "moonlit-8321623097391",
@@ -1212,7 +1223,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "white stone earrings"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10034"
   },
   {
     "id": "moonlit-8321175420975",
@@ -1257,7 +1269,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "women ring"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10035"
   },
   {
     "id": "moonlit-8320662863919",
@@ -1278,7 +1291,7 @@ export const INITIAL_PRODUCTS: Product[] = [
       "https://cdn.shopify.com/s/files/1/0772/0288/2607/files/62.jpg?v=1784043557"
     ],
     "shortDescription": "Bring a royal sparkle to your look with the Moonlit Jewelry Sapphire Luxe Silver Ring.",
-    "description": "<p>Bring a royal sparkle to your look with the Moonlit Jewelry Sapphire Luxe Silver Ring. This elegant ring features a deep blue oval center stone inspired by sapphire, paired with a silver-tone band covered in delicate crystal accents.</p>\n<p>The rich blue stone gives this ring a bold, classy, and premium feel, making it perfect for evening wear, formal outfits, weddings, parties, Eid looks, and gifting. It is a beautiful statement piece for anyone who loves timeless jewelry with a luxurious touch.</p>\n<p>\u00a0</p>\n<ul>\n<li>Silver-tone ring<br data-start=\"4591\" data-end=\"4594\">\n</li>\n<li>Sapphire-blue oval center stone<br data-end=\"4628\" data-start=\"4625\">\n</li>\n<li>Sparkling crystal accent band<br data-start=\"4657\" data-end=\"4660\">\n</li>\n<li>Royal and elegant design<br data-start=\"4684\" data-end=\"4687\">\n</li>\n<li>Perfect for formal and occasion wear<br data-start=\"4723\" data-end=\"4726\">\n</li>\n<li>Beautiful gift option</li>\n</ul>",
+    "description": "<p>Bring a royal sparkle to your look with the Moonlit Jewelry Sapphire Luxe Silver Ring. This elegant ring features a deep blue oval center stone inspired by sapphire, paired with a silver-tone band covered in delicate crystal accents.</p>\n<p>The rich blue stone gives this ring a bold, classy, and premium feel, making it perfect for evening wear, formal outfits, weddings, parties, Eid looks, and gifting. It is a beautiful statement piece for anyone who loves timeless jewelry with a luxurious touch.</p>\n<p> </p>\n<ul>\n<li>Silver-tone ring<br data-start=\"4591\" data-end=\"4594\">\n</li>\n<li>Sapphire-blue oval center stone<br data-end=\"4628\" data-start=\"4625\">\n</li>\n<li>Sparkling crystal accent band<br data-start=\"4657\" data-end=\"4660\">\n</li>\n<li>Royal and elegant design<br data-start=\"4684\" data-end=\"4687\">\n</li>\n<li>Perfect for formal and occasion wear<br data-start=\"4723\" data-end=\"4726\">\n</li>\n<li>Beautiful gift option</li>\n</ul>",
     "badge": "New Arrival",
     "availability": "in_stock",
     "featured": false,
@@ -1300,7 +1313,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "women jewelry"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10036"
   },
   {
     "id": "moonlit-8319044288559",
@@ -1322,7 +1336,7 @@ export const INITIAL_PRODUCTS: Product[] = [
       "https://cdn.shopify.com/s/files/1/0772/0288/2607/files/ChatGPT_Image_Jun_25_2026_04_22_58_PM.png?v=1782386609"
     ],
     "shortDescription": "Vintage-inspired sapphire halo ring.",
-    "description": "<p class=\"font-claude-response-body break-words whitespace-normal\">Vintage-inspired sapphire halo ring. At its heart sits a <strong>1-carat</strong>, deep blue, pear-shaped lab-created sapphire, elevated in a secure prong setting that showcases its rich color and brilliance. Encircling the center stone is a stunning halo of baguette-cut cubic zirconia, arranged in a scalloped sunburst pattern reminiscent of classic Art Deco jewelry.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">The smooth, polished gold-tone stainless steel band offers a comfortable, everyday fit while keeping the focus on the striking blue centerpiece. Tarnish-resistant and hypoallergenic, this ring is designed to look as beautiful years from now as it does today.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">Whether you're drawn to sapphire's timeless symbolism of loyalty and wisdom, or simply love a bold pop of blue, this ring makes a gorgeous choice for engagements, anniversaries, or as a special gift to yourself.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">\u00a0</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\"><strong>Bullet Points:</strong></p>\n<ul class=\"[li_&amp;]:mb-0 [li_&amp;]:mt-1 [li_&amp;]:gap-1 [&amp;:not(:last-child)_ul]:pb-1 [&amp;:not(:last-child)_ol]:pb-1 list-disc flex flex-col gap-1 pl-8 mb-3\">\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">\ud83d\udc99 <strong>Center Stone:</strong> 1-carat, pear-shaped lab-created (artificial) sapphire, rich royal blue</li>\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">\u2728 <strong>Halo Design:</strong> Baguette-cut cubic zirconia (CZ) halo in a scalloped vintage pattern</li>\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">\ud83d\udd17 <strong>Band:</strong> Smooth polished gold-tone stainless steel band</li>\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">\ud83c\udfc5 <strong>Metal:</strong> Gold-tone stainless steel \u2014 tarnish-resistant &amp; hypoallergenic</li>\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">\ud83d\udc8d <strong>Style:</strong> Vintage / Art Deco-inspired halo ring</li>\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">\ud83c\udf81 <strong>Perfect For:</strong> Engagement-style wear, anniversary gift, statement everyday jewelry</li>\n</ul>",
+    "description": "<p class=\"font-claude-response-body break-words whitespace-normal\">Vintage-inspired sapphire halo ring. At its heart sits a <strong>1-carat</strong>, deep blue, pear-shaped lab-created sapphire, elevated in a secure prong setting that showcases its rich color and brilliance. Encircling the center stone is a stunning halo of baguette-cut cubic zirconia, arranged in a scalloped sunburst pattern reminiscent of classic Art Deco jewelry.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">The smooth, polished gold-tone stainless steel band offers a comfortable, everyday fit while keeping the focus on the striking blue centerpiece. Tarnish-resistant and hypoallergenic, this ring is designed to look as beautiful years from now as it does today.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">Whether you're drawn to sapphire's timeless symbolism of loyalty and wisdom, or simply love a bold pop of blue, this ring makes a gorgeous choice for engagements, anniversaries, or as a special gift to yourself.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\"> </p>\n<p class=\"font-claude-response-body break-words whitespace-normal\"><strong>Bullet Points:</strong></p>\n<ul class=\"[li_&amp;]:mb-0 [li_&amp;]:mt-1 [li_&amp;]:gap-1 [&amp;:not(:last-child)_ul]:pb-1 [&amp;:not(:last-child)_ol]:pb-1 list-disc flex flex-col gap-1 pl-8 mb-3\">\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">💙 <strong>Center Stone:</strong> 1-carat, pear-shaped lab-created (artificial) sapphire, rich royal blue</li>\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">✨ <strong>Halo Design:</strong> Baguette-cut cubic zirconia (CZ) halo in a scalloped vintage pattern</li>\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">🔗 <strong>Band:</strong> Smooth polished gold-tone stainless steel band</li>\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">🏅 <strong>Metal:</strong> Gold-tone stainless steel — tarnish-resistant &amp; hypoallergenic</li>\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">💍 <strong>Style:</strong> Vintage / Art Deco-inspired halo ring</li>\n<li class=\"font-claude-response-body whitespace-normal break-words pl-2\">🎁 <strong>Perfect For:</strong> Engagement-style wear, anniversary gift, statement everyday jewelry</li>\n</ul>",
     "badge": null,
     "availability": "in_stock",
     "featured": false,
@@ -1345,7 +1359,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "vintage sapphire ring"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10037"
   },
   {
     "id": "moonlit-8319042715695",
@@ -1363,7 +1378,7 @@ export const INITIAL_PRODUCTS: Product[] = [
       "https://cdn.shopify.com/s/files/1/0772/0288/2607/files/Jun_26_2026_03_22_22_PM.png?v=1782470270"
     ],
     "shortDescription": "Elevate your everyday style with these Minimalist Gold Statement Drop Earrings , designed for women who appreciate modern elegance.",
-    "description": "<p class=\"PDq2pG_selectionAnchorContainer\" data-end=\"494\" data-start=\"205\">Elevate your everyday style with these <strong data-end=\"287\" data-start=\"244\">Minimalist Gold Statement Drop Earrings</strong>, designed for women who appreciate modern elegance. Featuring a sleek sculptural silhouette with a smooth gold-tone finish, these lightweight earrings effortlessly complement both casual and formal outfits.<span class=\"PDq2pG_selectionAnchor\" aria-hidden=\"true\"></span></p>\n<p data-end=\"743\" data-start=\"496\">Whether you're heading to a party, dinner, office, or special occasion, these timeless statement earrings add a sophisticated touch to any look. Their comfortable design makes them perfect for all-day wear while maintaining a luxurious appearance.</p>\n<h3 data-end=\"757\" data-start=\"745\" data-section-id=\"19zqy0x\">Features</h3>\n<ul data-end=\"1028\" data-start=\"758\">\n<li data-end=\"792\" data-start=\"758\" data-section-id=\"c5lo2u\">\u2728 Elegant Minimalist Drop Design</li>\n<li data-end=\"822\" data-start=\"793\" data-section-id=\"1i7e7bv\">\ud83d\udc9b Premium Gold-Tone Finish</li>\n<li data-end=\"861\" data-start=\"823\" data-section-id=\"1v79x8t\">\ud83c\udf3f Lightweight &amp; Comfortable to Wear</li>\n<li data-end=\"893\" data-start=\"862\" data-section-id=\"1hd6e5q\">\ud83d\udc8e Smooth High-Polish Surface</li>\n<li data-end=\"942\" data-start=\"894\" data-section-id=\"rhnxrz\">\ud83c\udf38 Suitable for Daily Wear &amp; Special Occasions</li>\n<li data-end=\"970\" data-start=\"943\" data-section-id=\"vh62u7\">\ud83c\udf81 Perfect Gift for Women</li>\n<li data-end=\"1028\" data-start=\"971\" data-section-id=\"1ar65e2\">\ud83d\udc57 Pairs Beautifully with Traditional &amp; Western Outfits</li>\n</ul>\n<h3 data-end=\"1052\" data-start=\"1030\" data-section-id=\"11jcyy1\">Why You'll Love It</h3>\n<ul data-end=\"1245\" data-start=\"1053\">\n<li data-end=\"1079\" data-start=\"1053\" data-section-id=\"nrq2iq\">Modern sculptural design</li>\n<li data-end=\"1111\" data-start=\"1080\" data-section-id=\"1dvq2y9\">Comfortable for extended wear</li>\n<li data-end=\"1140\" data-start=\"1112\" data-section-id=\"1asn7vk\">Timeless fashion accessory</li>\n<li data-end=\"1174\" data-start=\"1141\" data-section-id=\"1jdgeec\">Easy to style with any wardrobe</li>\n<li data-end=\"1245\" data-start=\"1175\" data-section-id=\"g6j8ef\">Makes an elegant gift for birthdays, anniversaries, and celebrations</li>\n</ul>",
+    "description": "<p class=\"PDq2pG_selectionAnchorContainer\" data-end=\"494\" data-start=\"205\">Elevate your everyday style with these <strong data-end=\"287\" data-start=\"244\">Minimalist Gold Statement Drop Earrings</strong>, designed for women who appreciate modern elegance. Featuring a sleek sculptural silhouette with a smooth gold-tone finish, these lightweight earrings effortlessly complement both casual and formal outfits.<span class=\"PDq2pG_selectionAnchor\" aria-hidden=\"true\"></span></p>\n<p data-end=\"743\" data-start=\"496\">Whether you're heading to a party, dinner, office, or special occasion, these timeless statement earrings add a sophisticated touch to any look. Their comfortable design makes them perfect for all-day wear while maintaining a luxurious appearance.</p>\n<h3 data-end=\"757\" data-start=\"745\" data-section-id=\"19zqy0x\">Features</h3>\n<ul data-end=\"1028\" data-start=\"758\">\n<li data-end=\"792\" data-start=\"758\" data-section-id=\"c5lo2u\">✨ Elegant Minimalist Drop Design</li>\n<li data-end=\"822\" data-start=\"793\" data-section-id=\"1i7e7bv\">💛 Premium Gold-Tone Finish</li>\n<li data-end=\"861\" data-start=\"823\" data-section-id=\"1v79x8t\">🌿 Lightweight &amp; Comfortable to Wear</li>\n<li data-end=\"893\" data-start=\"862\" data-section-id=\"1hd6e5q\">💎 Smooth High-Polish Surface</li>\n<li data-end=\"942\" data-start=\"894\" data-section-id=\"rhnxrz\">🌸 Suitable for Daily Wear &amp; Special Occasions</li>\n<li data-end=\"970\" data-start=\"943\" data-section-id=\"vh62u7\">🎁 Perfect Gift for Women</li>\n<li data-end=\"1028\" data-start=\"971\" data-section-id=\"1ar65e2\">👗 Pairs Beautifully with Traditional &amp; Western Outfits</li>\n</ul>\n<h3 data-end=\"1052\" data-start=\"1030\" data-section-id=\"11jcyy1\">Why You'll Love It</h3>\n<ul data-end=\"1245\" data-start=\"1053\">\n<li data-end=\"1079\" data-start=\"1053\" data-section-id=\"nrq2iq\">Modern sculptural design</li>\n<li data-end=\"1111\" data-start=\"1080\" data-section-id=\"1dvq2y9\">Comfortable for extended wear</li>\n<li data-end=\"1140\" data-start=\"1112\" data-section-id=\"1asn7vk\">Timeless fashion accessory</li>\n<li data-end=\"1174\" data-start=\"1141\" data-section-id=\"1jdgeec\">Easy to style with any wardrobe</li>\n<li data-end=\"1245\" data-start=\"1175\" data-section-id=\"g6j8ef\">Makes an elegant gift for birthdays, anniversaries, and celebrations</li>\n</ul>",
     "badge": null,
     "availability": "in_stock",
     "featured": false,
@@ -1379,7 +1394,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "white-gold"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10038"
   },
   {
     "id": "moonlit-8318957584431",
@@ -1411,7 +1427,6 @@ export const INITIAL_PRODUCTS: Product[] = [
       "1 carat cubic zirconia ring",
       "1 carat ring",
       "affordable engagement ring",
-      
       "clear stone ring",
       "crown ring",
       "crystal ring",
@@ -1438,13 +1453,14 @@ export const INITIAL_PRODUCTS: Product[] = [
       "women ring"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10039"
   },
   {
     "id": "moonlit-8310854287407",
     "name": "Moonlit Jewelry - Necklace Set for Women with Black Square Stone",
     "handle": "emerald-royale-gift-set-ring-earrings-necklace",
-    "category": "Necklaces",
+    "category": "endants & Necklace",
     "price": 5099,
     "originalPrice": 5999,
     "currency": "PKR",
@@ -1459,7 +1475,7 @@ export const INITIAL_PRODUCTS: Product[] = [
       "https://cdn.shopify.com/s/files/1/0772/0288/2607/files/Necklace_Set_For_Women_Wear.png?v=1783961067"
     ],
     "shortDescription": "Complete your jewelry collection with this elegant silver-plated jewelry set featuring a stunning black square brilliant stone surrounded by sparkling crystal accents.",
-    "description": "<p data-pm-slice=\"0 0 []\">Complete your jewelry collection with this elegant silver-plated jewelry set featuring a stunning black square brilliant stone surrounded by sparkling crystal accents. Designed to deliver timeless sophistication, the necklace and matching earrings beautifully complement evening dresses, bridal wear, party outfits, and formal attire.</p>\n<p>The premium silver finish combined with the striking black centerpiece creates a luxurious contrast that catches the light from every angle. Lightweight and comfortable to wear, this set is perfect for long events without compromising on style.</p>\n<p>Whether you're attending a wedding, celebrating a special occasion, or searching for the perfect gift, this elegant jewelry set offers classic beauty that never goes out of fashion.<br><br></p>\n<p><strong>Elegant Black Stone Design:</strong>\u00a0Featuring a luxurious black square-cut centerpiece surrounded by sparkling crystals, this matching necklace and earrings set adds timeless elegance to every outfit.</p>\n<p><strong>Premium Craftsmanship:</strong>\u00a0Expertly crafted with high-quality silver plating and brilliant crystal detailing for a luxurious finish that enhances both casual and formal looks.</p>\n<p><strong>Comfortable &amp; Lightweight</strong>\u00a0Designed for all-day comfort with lightweight earrings and an adjustable necklace that sits beautifully around the neckline.</p>\n<p><strong>Perfect Gift for Women:</strong>\u00a0An ideal gift for birthdays, anniversaries, Valentine's Day, Mother's Day, weddings, engagements, Christmas, Eid, or any special occasion.</p>\n<p><strong>Suitable for Every Occasion:</strong>\u00a0Perfect accessory for weddings, evening parties, formal events, dinners, receptions, festivals, and everyday elegant styling.</p>",
+    "description": "<p data-pm-slice=\"0 0 []\">Complete your jewelry collection with this elegant silver-plated jewelry set featuring a stunning black square brilliant stone surrounded by sparkling crystal accents. Designed to deliver timeless sophistication, the necklace and matching earrings beautifully complement evening dresses, bridal wear, party outfits, and formal attire.</p>\n<p>The premium silver finish combined with the striking black centerpiece creates a luxurious contrast that catches the light from every angle. Lightweight and comfortable to wear, this set is perfect for long events without compromising on style.</p>\n<p>Whether you're attending a wedding, celebrating a special occasion, or searching for the perfect gift, this elegant jewelry set offers classic beauty that never goes out of fashion.<br><br></p>\n<p><strong>Elegant Black Stone Design:</strong> Featuring a luxurious black square-cut centerpiece surrounded by sparkling crystals, this matching necklace and earrings set adds timeless elegance to every outfit.</p>\n<p><strong>Premium Craftsmanship:</strong> Expertly crafted with high-quality silver plating and brilliant crystal detailing for a luxurious finish that enhances both casual and formal looks.</p>\n<p><strong>Comfortable &amp; Lightweight</strong> Designed for all-day comfort with lightweight earrings and an adjustable necklace that sits beautifully around the neckline.</p>\n<p><strong>Perfect Gift for Women:</strong> An ideal gift for birthdays, anniversaries, Valentine's Day, Mother's Day, weddings, engagements, Christmas, Eid, or any special occasion.</p>\n<p><strong>Suitable for Every Occasion:</strong> Perfect accessory for weddings, evening parties, formal events, dinners, receptions, festivals, and everyday elegant styling.</p>",
     "badge": null,
     "availability": "in_stock",
     "featured": false,
@@ -1483,7 +1499,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "women jewelry"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10040"
   },
   {
     "id": "moonlit-8310853992495",
@@ -1497,8 +1514,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     "galleryImages": [
       "https://cdn.shopify.com/s/files/1/0772/0288/2607/files/message-card.png?v=1782896610"
     ],
-    "shortDescription": "&lt;h2&gt;Free Message Card \u2014 Add to Your Order&lt;/h2&gt;&lt;p&gt;Make your gift truly memorable.",
-    "description": "&lt;h2&gt;Free Message Card \u2014 Add to Your Order&lt;/h2&gt;&lt;p&gt;Make your gift truly memorable. Select one of our beautifully designed message cards and we'll hand-write your chosen message and include it inside your parcel at &lt;strong&gt;absolutely no extra cost&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;Each card is printed on premium textured card stock with elegant calligraphy-style typography. Perfect for birthdays, Eid gifts, anniversaries, weddings, and heartfelt gestures.&lt;/p&gt;&lt;h3&gt;How it works:&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;Add this card to your cart alongside your jewellery.&lt;/li&gt;&lt;li&gt;Select your preferred message from the options below.&lt;/li&gt;&lt;li&gt;We include it beautifully in your parcel \u2014 free of charge.&lt;/li&gt;&lt;/ol&gt;",
+    "shortDescription": "&lt;h2&gt;Free Message Card — Add to Your Order&lt;/h2&gt;&lt;p&gt;Make your gift truly memorable.",
+    "description": "&lt;h2&gt;Free Message Card — Add to Your Order&lt;/h2&gt;&lt;p&gt;Make your gift truly memorable. Select one of our beautifully designed message cards and we'll hand-write your chosen message and include it inside your parcel at &lt;strong&gt;absolutely no extra cost&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;Each card is printed on premium textured card stock with elegant calligraphy-style typography. Perfect for birthdays, Eid gifts, anniversaries, weddings, and heartfelt gestures.&lt;/p&gt;&lt;h3&gt;How it works:&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;Add this card to your cart alongside your jewellery.&lt;/li&gt;&lt;li&gt;Select your preferred message from the options below.&lt;/li&gt;&lt;li&gt;We include it beautifully in your parcel — free of charge.&lt;/li&gt;&lt;/ol&gt;",
     "badge": "New Arrival",
     "availability": "in_stock",
     "featured": false,
@@ -1515,7 +1532,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "message-card"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10041"
   },
   {
     "id": "moonlit-8310852649007",
@@ -1562,7 +1580,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "women ring"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10042"
   },
   {
     "id": "moonlit-8310852419631",
@@ -1612,6 +1631,7 @@ export const INITIAL_PRODUCTS: Product[] = [
       "women ring"
     ],
     "visible": true,
-    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use."
+    "careInstructions": "Avoid direct contact with perfumes, alcohol-based hair sprays, and harsh chlorine. Store in the complimentary Moonlit velvet pouch when not in use.",
+    "articleNo": "10043"
   }
 ];

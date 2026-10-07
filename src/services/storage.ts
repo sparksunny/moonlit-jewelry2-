@@ -3,10 +3,28 @@ import { INITIAL_PRODUCTS } from '../data/initialProducts';
 import { INITIAL_SITE_CONTENT } from '../data/initialContent';
 
 const STORAGE_KEYS = {
-  PRODUCTS: 'moonlit_products_v8',
-  CONTENT: 'moonlit_site_content_v8',
-  INQUIRIES: 'moonlit_inquiries_v8',
-  CATEGORIES: 'moonlit_categories_v8'
+  PRODUCTS: 'moonlit_products_v9',
+  CONTENT: 'moonlit_site_content_v9',
+  INQUIRIES: 'moonlit_inquiries_v9',
+  CATEGORIES: 'moonlit_categories_v9'
+};
+
+const sanitizeProducts = (list: Product[]): Product[] => {
+  return list.map((p, idx) => {
+    let artNo = p.articleNo;
+    if (!artNo || !/^\d{5}$/.test(String(artNo).trim())) {
+      artNo = String(10001 + (idx % 90000));
+    }
+    const cat =
+      p.category === 'Necklaces' || p.category === 'Necklace'
+        ? 'endants & Necklace'
+        : p.category;
+    return {
+      ...p,
+      articleNo: String(artNo),
+      category: cat
+    };
+  });
 };
 
 export const storage = {
@@ -16,13 +34,13 @@ export const storage = {
       if (saved) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          return parsed;
+          return sanitizeProducts(parsed);
         }
       }
     } catch (e) {
       console.error('Error loading products from localStorage', e);
     }
-    return INITIAL_PRODUCTS;
+    return sanitizeProducts(INITIAL_PRODUCTS);
   },
 
   saveProducts(products: Product[]): void {

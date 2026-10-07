@@ -51,7 +51,7 @@ export const Header: React.FC<HeaderProps> = ({
     'Home',
     'All Jewelry',
     'Wedding Bands & Rings',
-    'Necklaces',
+    'endants & Necklace',
     'Bridal Jewelry',
     'Bangles & Bracelets',
     'Earrings & Studs',
@@ -89,17 +89,6 @@ export const Header: React.FC<HeaderProps> = ({
               <WhatsAppIcon className="w-3.5 h-3.5 text-[#1E7E34] shrink-0 group-hover:scale-110 transition-transform" />
               <span className="font-semibold tracking-normal">: {content.phone || '+1 716-313-1615'}</span>
             </a>
-
-            <span className="text-[#c8b46a]">|</span>
-
-            <button
-              onClick={onToggleCurrency}
-              className="flex items-center gap-1 text-[#5A4112] hover:text-[#2E2007] transition-colors font-bold tracking-widest cursor-pointer bg-transparent"
-              title="Switch currency display"
-            >
-              <span>{currency === 'PKR' ? 'PKR (Rs)' : 'USD ($)'}</span>
-              <span className="text-[10px] text-[#88641C]">⇄</span>
-            </button>
           </div>
         </div>
       </div>
@@ -231,15 +220,6 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           <div className="mt-8 pt-6 border-t border-[#ded3b6] space-y-3 text-xs text-[#5A4112] font-semibold">
-            <div className="flex items-center justify-between">
-              <span>Display Currency:</span>
-              <button
-                onClick={onToggleCurrency}
-                className="px-3 py-1 bg-[#e5dbc0] rounded font-bold text-[#2D1F08]"
-              >
-                {currency}
-              </button>
-            </div>
             <div>
               <a
                 href={`https://wa.me/${whatsappDigits}`}

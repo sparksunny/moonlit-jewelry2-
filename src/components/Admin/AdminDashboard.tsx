@@ -89,9 +89,10 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
   const handleAddNewProduct = () => {
     const newProd: Product = {
       id: `moonlit-${Date.now()}`,
+      articleNo: String(Math.floor(10000 + Math.random() * 90000)),
       name: 'New Moonlit Jewelry Piece',
       handle: `moonlit-piece-${Date.now()}`,
-      category: 'Rings',
+      category: 'Wedding Bands & Rings',
       price: 2999,
       originalPrice: 3499,
       currency: 'PKR',
@@ -119,6 +120,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
     const duplicated: Product = {
       ...prod,
       id: `moonlit-${Date.now()}`,
+      articleNo: String(Math.floor(10000 + Math.random() * 90000)),
       name: `${prod.name} (Copy)`,
       handle: `${prod.handle}-copy-${Date.now()}`
     };
@@ -363,8 +365,8 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                         </span>
                       </td>
                       <td className="p-3 tabular-nums font-semibold text-[#44331C]">
-                        {p.currency} {p.price.toLocaleString()}
-                        {p.originalPrice && p.originalPrice > p.price && (
+                        {p.currency || 'PKR'} {(p.price ?? 0).toLocaleString()}
+                        {p.originalPrice && p.price !== undefined && p.originalPrice > p.price && (
                           <span className="block text-[10px] text-stone-400 line-through">
                             {p.originalPrice.toLocaleString()}
                           </span>
@@ -824,8 +826,8 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                         setProducts(
                           products.map((p) => ({
                             ...p,
-                            originalPrice: p.price,
-                            price: Math.round(p.price * 0.9)
+                            originalPrice: p.price ?? 0,
+                            price: Math.round((p.price ?? 0) * 0.9)
                           }))
                         );
                         showNotice('Applied 10% discount to all products.');
@@ -842,7 +844,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                         setProducts(
                           products.map((p) => ({
                             ...p,
-                            price: Math.round(p.price * 1.05)
+                            price: Math.round((p.price ?? 0) * 1.05)
                           }))
                         );
                         showNotice('Adjusted prices +5%.');
@@ -989,12 +991,31 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                     className="w-full bg-[#FAF9F5] border border-stone-300 px-3 py-2 text-xs"
                   >
                     <option value="Wedding Bands & Rings">Wedding Bands & Rings</option>
-                    <option value="Necklaces">Necklaces</option>
+                    <option value="endants & Necklace">endants & Necklace</option>
                     <option value="Bridal Jewelry">Bridal Jewelry</option>
                     <option value="Bangles & Bracelets">Bangles & Bracelets</option>
                     <option value="Earrings & Studs">Earrings & Studs</option>
                     <option value="Pearl & Polki Jewelry">Pearl & Polki Jewelry</option>
                   </select>
+                </div>
+
+                <div>
+                  <label className="block tracking-wider uppercase font-semibold text-stone-600 mb-1">
+                    Article No (5 Digits) *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    maxLength={5}
+                    placeholder="e.g. 10025"
+                    value={editingProduct.articleNo || ''}
+                    onChange={(e) => {
+                      const digits = e.target.value.replace(/\D/g, '').slice(0, 5);
+                      setEditingProduct({ ...editingProduct, articleNo: digits });
+                    }}
+                    className="w-full bg-[#FAF9F5] border border-stone-300 px-3 py-2 text-xs font-mono font-bold"
+                  />
+                  <p className="text-[10px] text-stone-400 mt-0.5">Displayed at the bottom of the product image</p>
                 </div>
               </div>
 

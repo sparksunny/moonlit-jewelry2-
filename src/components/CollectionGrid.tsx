@@ -34,7 +34,6 @@ export const CollectionGrid: React.FC<CollectionGridProps> = ({
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedMaterial, setSelectedMaterial] = useState<string>('all');
   const [selectedAvailability, setSelectedAvailability] = useState<string>('all');
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 15000]);
 
   // Derived filter options
   const materials = useMemo(() => {
@@ -73,14 +72,23 @@ export const CollectionGrid: React.FC<CollectionGridProps> = ({
           );
         }
 
-        // Necklaces / Necklace
-        if (cat === 'necklaces' || cat === 'necklace') {
+        // endants & Necklace (and Pendants & Necklaces aliases)
+        if (
+          cat === 'endants & necklace' ||
+          cat === 'pendants & necklace' ||
+          cat === 'necklaces' ||
+          cat === 'necklace' ||
+          cat.includes('endant') ||
+          cat.includes('pendant') ||
+          cat.includes('necklace')
+        ) {
           return (
             pc.includes('necklace') ||
             pc.includes('pendant') ||
+            pc.includes('choker') ||
             pn.includes('necklace') ||
             pn.includes('pendant') ||
-            ptags.some((t) => /necklace|pendant|choker/i.test(t))
+            ptags.some((t) => /necklace|pendant|choker|chain/i.test(t))
           );
         }
 
@@ -152,9 +160,6 @@ export const CollectionGrid: React.FC<CollectionGridProps> = ({
       result = result.filter((p) => p.availability === selectedAvailability);
     }
 
-    // Price range
-    result = result.filter((p) => p.price >= priceRange[0] && p.price <= priceRange[1]);
-
     // Search query
     if (searchQuery.trim() !== '') {
       const q = searchQuery.toLowerCase();
@@ -168,15 +173,11 @@ export const CollectionGrid: React.FC<CollectionGridProps> = ({
       );
     }
 
-    // Sort
+    // Sort (No price sort)
     return [...result].sort((a, b) => {
       switch (sortBy) {
         case 'newest':
           return (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0);
-        case 'price-asc':
-          return a.price - b.price;
-        case 'price-desc':
-          return b.price - a.price;
         case 'title-asc':
           return a.name.localeCompare(b.name);
         case 'title-desc':
@@ -191,7 +192,6 @@ export const CollectionGrid: React.FC<CollectionGridProps> = ({
     selectedCategory,
     selectedMaterial,
     selectedAvailability,
-    priceRange,
     searchQuery,
     sortBy
   ]);
@@ -200,23 +200,20 @@ export const CollectionGrid: React.FC<CollectionGridProps> = ({
     selectedCategory !== 'All Jewelry' ||
     selectedMaterial !== 'all' ||
     selectedAvailability !== 'all' ||
-    searchQuery.trim() !== '' ||
-    priceRange[0] > 0 ||
-    priceRange[1] < 15000;
+    searchQuery.trim() !== '';
 
   const resetFilters = () => {
     onSelectCategory('All Jewelry');
     setSelectedMaterial('all');
     setSelectedAvailability('all');
     setSearchQuery('');
-    setPriceRange([0, 15000]);
     setSortBy('featured');
   };
 
   const categoriesList = [
     'All Jewelry',
     'Wedding Bands & Rings',
-    'Necklaces',
+    'endants & Necklace',
     'Bridal Jewelry',
     'Bangles & Bracelets',
     'Earrings & Studs',
@@ -293,8 +290,6 @@ export const CollectionGrid: React.FC<CollectionGridProps> = ({
             >
               <option value="featured">Featured Pieces</option>
               <option value="newest">Newest Arrivals</option>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
               <option value="title-asc">Alphabetical: A–Z</option>
               <option value="title-desc">Alphabetical: Z–A</option>
             </select>
