@@ -3,10 +3,10 @@ import { INITIAL_PRODUCTS } from '../data/initialProducts';
 import { INITIAL_SITE_CONTENT } from '../data/initialContent';
 
 const STORAGE_KEYS = {
-  PRODUCTS: 'moonlit_products_v10',
-  CONTENT: 'moonlit_site_content_v10',
-  INQUIRIES: 'moonlit_inquiries_v10',
-  CATEGORIES: 'moonlit_categories_v10'
+  PRODUCTS: 'moonlit_products_v11',
+  CONTENT: 'moonlit_site_content_v11',
+  INQUIRIES: 'moonlit_inquiries_v11',
+  CATEGORIES: 'moonlit_categories_v11'
 };
 
 const sanitizeProducts = (list: Product[]): Product[] => {

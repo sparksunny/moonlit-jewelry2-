@@ -45,13 +45,6 @@ export const SearchModal: React.FC<SearchModalProps> = ({
         .slice(0, 8)
     : [];
 
-  const formatPrice = (val: number) => {
-    if (currency === 'USD') {
-      return `$${Math.round(val / pkrToUsdRate).toLocaleString()}`;
-    }
-    return `Rs. ${val.toLocaleString()}`;
-  };
-
   return (
     <div
       className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-[#5C4D40]/30 backdrop-blur-md"

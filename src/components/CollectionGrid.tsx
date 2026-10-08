@@ -48,105 +48,59 @@ export const CollectionGrid: React.FC<CollectionGridProps> = ({
   const filteredProducts = useMemo(() => {
     let result = products.filter((p) => p.visible);
 
-    // Category filter with intelligent aliases
+    // Strict & authoritative Category filter (preventing cross-category leakage)
     if (selectedCategory && selectedCategory !== 'All Jewelry' && selectedCategory !== 'Home') {
-      const cat = selectedCategory.toLowerCase().trim();
+      const selected = selectedCategory.trim().toLowerCase();
       result = result.filter((p) => {
-        const pc = (p.category || '').toLowerCase();
-        const pn = (p.name || '').toLowerCase();
-        const ptags = (p.tags || []).map((t) => t.toLowerCase());
-        const pgem = (p.gemstone || '').toLowerCase();
-        const pdesc = (p.shortDescription || '').toLowerCase();
+        const prodCat = (p.category || '').trim().toLowerCase();
 
-        // Exact match
-        if (pc === cat || ptags.includes(cat)) return true;
+        // 1. Direct match
+        if (prodCat === selected) return true;
 
-        // Wedding Bands & Rings
-        if (cat === 'wedding bands & rings' || cat === 'rings') {
-          return (
-            pc.includes('ring') ||
-            pc.includes('band') ||
-            pn.includes('ring') ||
-            pn.includes('band') ||
-            ptags.some((t) => /ring|band/i.test(t))
-          );
-        }
-
-        // Pendants & Necklace (and Pendants & Necklaces aliases)
+        // 2. Normalized category aliases
         if (
-          cat === 'endants & necklace' ||
-          cat === 'pendants & necklace' ||
-          cat === 'necklaces' ||
-          cat === 'necklace' ||
-          cat.includes('endant') ||
-          cat.includes('pendant') ||
-          cat.includes('necklace')
+          (selected === 'pendants & necklace' || selected === 'endants & necklace') &&
+          (prodCat === 'pendants & necklace' || prodCat === 'endants & necklace' || prodCat === 'necklaces' || prodCat === 'necklace')
         ) {
-          return (
-            pc.includes('necklace') ||
-            pc.includes('pendant') ||
-            pc.includes('choker') ||
-            pn.includes('necklace') ||
-            pn.includes('pendant') ||
-            ptags.some((t) => /necklace|pendant|choker|chain/i.test(t))
-          );
+          return true;
         }
 
-        // Bridal Jewelry
-        if (cat === 'bridal jewelry') {
-          return (
-            pc.includes('bridal') ||
-            pn.includes('bridal') ||
-            ptags.some((t) => /bridal|wedding|shaadi/i.test(t))
-          );
-        }
-
-        // Bangles & Bracelets (with typo tolerance for bracelats)
         if (
-          cat === 'bangles & bracelets' ||
-          cat === 'bracelets' ||
-          cat.includes('bracelet') ||
-          cat.includes('bangle') ||
-          cat.includes('bracelat')
+          (selected === 'wedding bands & rings' || selected === 'rings') &&
+          (prodCat === 'wedding bands & rings' || prodCat === 'rings')
         ) {
-          return (
-            pc.includes('bracelet') ||
-            pc.includes('bangle') ||
-            pn.includes('bracelet') ||
-            pn.includes('bangle') ||
-            pn.includes('cuff') ||
-            ptags.some((t) => /bracelet|bangle|cuff|kara/i.test(t))
-          );
+          return true;
         }
 
-        // Earrings & Studs
-        if (cat === 'earrings & studs' || cat === 'earrings') {
-          return (
-            pc.includes('earring') ||
-            pc.includes('stud') ||
-            pn.includes('earring') ||
-            pn.includes('stud') ||
-            ptags.some((t) => /earring|stud|jhumka|hoop|drop/i.test(t))
-          );
+        if (
+          (selected === 'bangles & bracelets' || selected === 'bracelets') &&
+          (prodCat === 'bangles & bracelets' || prodCat === 'bracelets')
+        ) {
+          return true;
         }
 
-        // Pearl & Polki Jewelry
-        if (cat === 'pearl & polki jewelry' || cat.includes('pearl') || cat.includes('polki')) {
-          return (
-            pc.includes('pearl') ||
-            pc.includes('polki') ||
-            pgem.includes('pearl') ||
-            pgem.includes('polki') ||
-            pn.includes('pearl') ||
-            pn.includes('polki') ||
-            pn.includes('pearlescent') ||
-            pdesc.includes('pearl') ||
-            pdesc.includes('polki') ||
-            ptags.some((t) => /pearl|polki|kundan/i.test(t))
-          );
+        if (
+          (selected === 'earrings & studs' || selected === 'earrings') &&
+          (prodCat === 'earrings & studs' || prodCat === 'earrings')
+        ) {
+          return true;
         }
 
-        return pc.includes(cat) || ptags.some((t) => t.includes(cat));
+        if (
+          selected === 'pearl & polki jewelry' &&
+          prodCat === 'pearl & polki jewelry'
+        ) {
+          return true;
+        }
+
+        if (
+          selected === 'bridal jewelry' &&
+          prodCat === 'bridal jewelry'
+        ) {
+          return true;
+        }
+
+        return false;
       });
     }
 
