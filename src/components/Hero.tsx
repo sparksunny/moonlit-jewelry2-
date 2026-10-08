@@ -17,7 +17,7 @@ export const Hero: React.FC<HeroProps> = ({
         {/* Editorial Subtitle in black text */}
         <div className="inline-flex items-center gap-2 text-xs sm:text-sm tracking-[0.24em] uppercase text-black font-sans font-bold mb-3 sm:mb-5 bg-white/90 px-3.5 py-1.5 rounded-full border border-black/20 shadow-2xs">
           <Sparkles className="w-3.5 h-3.5 text-black" />
-          <span>Haute Joaillerie & Timeless Elegance</span>
+          <span>Luxury Jewelry, Timeless Elegance</span>
         </div>
 
         {/* Main Headline - Bold Black Text */}
