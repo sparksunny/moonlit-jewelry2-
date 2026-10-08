@@ -72,7 +72,7 @@ export const CollectionGrid: React.FC<CollectionGridProps> = ({
           );
         }
 
-        // endants & Necklace (and Pendants & Necklaces aliases)
+        // Pendants & Necklace (and Pendants & Necklaces aliases)
         if (
           cat === 'endants & necklace' ||
           cat === 'pendants & necklace' ||
@@ -213,7 +213,7 @@ export const CollectionGrid: React.FC<CollectionGridProps> = ({
   const categoriesList = [
     'All Jewelry',
     'Wedding Bands & Rings',
-    'endants & Necklace',
+    'Pendants & Necklace',
     'Bridal Jewelry',
     'Bangles & Bracelets',
     'Earrings & Studs',

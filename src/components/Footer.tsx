@@ -96,7 +96,7 @@ export const Footer: React.FC<FooterProps> = ({
               {[
                 'All Jewelry',
                 'Wedding Bands & Rings',
-                'endants & Necklace',
+                'Pendants & Necklace',
                 'Bridal Jewelry',
                 'Bangles & Bracelets',
                 'Earrings & Studs',

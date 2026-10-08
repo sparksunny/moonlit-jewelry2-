@@ -3,10 +3,10 @@ import { INITIAL_PRODUCTS } from '../data/initialProducts';
 import { INITIAL_SITE_CONTENT } from '../data/initialContent';
 
 const STORAGE_KEYS = {
-  PRODUCTS: 'moonlit_products_v9',
-  CONTENT: 'moonlit_site_content_v9',
-  INQUIRIES: 'moonlit_inquiries_v9',
-  CATEGORIES: 'moonlit_categories_v9'
+  PRODUCTS: 'moonlit_products_v10',
+  CONTENT: 'moonlit_site_content_v10',
+  INQUIRIES: 'moonlit_inquiries_v10',
+  CATEGORIES: 'moonlit_categories_v10'
 };
 
 const sanitizeProducts = (list: Product[]): Product[] => {
@@ -16,8 +16,10 @@ const sanitizeProducts = (list: Product[]): Product[] => {
       artNo = String(10001 + (idx % 90000));
     }
     const cat =
-      p.category === 'Necklaces' || p.category === 'Necklace'
-        ? 'endants & Necklace'
+      p.category === 'Necklaces' ||
+      p.category === 'Necklace' ||
+      p.category === 'endants & Necklace'
+        ? 'Pendants & Necklace'
         : p.category;
     return {
       ...p,

@@ -51,7 +51,7 @@ export const Header: React.FC<HeaderProps> = ({
     'Home',
     'All Jewelry',
     'Wedding Bands & Rings',
-    'endants & Necklace',
+    'Pendants & Necklace',
     'Bridal Jewelry',
     'Bangles & Bracelets',
     'Earrings & Studs',

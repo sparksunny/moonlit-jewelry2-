@@ -991,7 +991,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                     className="w-full bg-[#FAF9F5] border border-stone-300 px-3 py-2 text-xs"
                   >
                     <option value="Wedding Bands & Rings">Wedding Bands & Rings</option>
-                    <option value="endants & Necklace">endants & Necklace</option>
+                    <option value="Pendants & Necklace">Pendants & Necklace</option>
                     <option value="Bridal Jewelry">Bridal Jewelry</option>
                     <option value="Bangles & Bracelets">Bangles & Bracelets</option>
                     <option value="Earrings & Studs">Earrings & Studs</option>
