@@ -35,12 +35,33 @@ export default function App() {
     authService.logout();
   }, []);
 
-  // Multi-device real-time sync with Cloud Firestore
+  // Multi-device real-time sync & fresh load guarantee with Cloud Firestore
   useEffect(() => {
-    // 1. Initialize cloud catalog if Firestore is empty on first boot
+    // 1. Purge any outdated versioned localStorage to prevent stale cache contamination
+    try {
+      Object.keys(localStorage).forEach((key) => {
+        if (key.startsWith('moonlit_') && !key.includes('_v12')) {
+          localStorage.removeItem(key);
+        }
+      });
+    } catch (e) {}
+
+    // 2. Initialize cloud catalog if Firestore is empty on first boot
     cloudDb.initializeIfEmpty(storage.getProducts(), storage.getContent());
 
-    // 2. Real-time subscription to cloud products
+    // 3. Immediately fetch fresh data straight from Cloud Firestore servers (bypassing any device cache)
+    cloudDb.fetchFreshServerData().then(({ products: freshProducts, content: freshContent }) => {
+      if (freshProducts && freshProducts.length > 0) {
+        setProducts(freshProducts);
+        storage.saveProducts(freshProducts);
+      }
+      if (freshContent) {
+        setContent(freshContent);
+        storage.saveContent(freshContent);
+      }
+    });
+
+    // 4. Real-time subscription to cloud products
     const unsubProducts = cloudDb.subscribeToProducts((cloudProducts) => {
       if (cloudProducts && cloudProducts.length > 0) {
         setProducts(cloudProducts);
@@ -48,7 +69,7 @@ export default function App() {
       }
     });
 
-    // 3. Real-time subscription to cloud site branding and content
+    // 5. Real-time subscription to cloud site branding and content
     const unsubContent = cloudDb.subscribeToSiteContent((cloudContent) => {
       if (cloudContent) {
         setContent(cloudContent);
@@ -56,7 +77,7 @@ export default function App() {
       }
     });
 
-    // 4. Real-time subscription to cloud inquiries
+    // 6. Real-time subscription to cloud inquiries
     const unsubInquiries = cloudDb.subscribeToInquiries((cloudInquiries) => {
       if (cloudInquiries) {
         setInquiries(cloudInquiries);
@@ -129,6 +150,23 @@ export default function App() {
     });
   };
 
+  const handleForceRefresh = () => {
+    try {
+      // Clear old caches
+      Object.keys(localStorage).forEach((key) => {
+        if (key.startsWith('moonlit_') && !key.includes('_v12')) {
+          localStorage.removeItem(key);
+        }
+      });
+      sessionStorage.removeItem('moonlit_auto_fresh_v2');
+    } catch (e) {}
+
+    // Reload with fresh timestamp to bypass any device HTTP cache
+    const url = new URL(window.location.href);
+    url.searchParams.set('_fresh', Date.now().toString());
+    window.location.replace(url.toString());
+  };
+
   const scrollToCollection = () => {
     const el = document.getElementById('collection-grid');
     if (el) {
@@ -146,6 +184,7 @@ export default function App() {
         onOpenAdmin={handleOpenAdmin}
         onOpenInquiry={() => handleOpenInquiry()}
         onOpenSearch={() => setSearchModalOpen(true)}
+        onRefresh={handleForceRefresh}
         inquiryCount={inquiries.filter((i) => i.status === 'new').length}
         currency={currency}
         onToggleCurrency={handleToggleCurrency}

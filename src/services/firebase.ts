@@ -8,7 +8,8 @@ import {
   setDoc,
   writeBatch,
   onSnapshot,
-  getDocFromServer
+  getDocFromServer,
+  getDocsFromServer
 } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import firebaseConfig from '../../firebase-applet-config.json';
@@ -228,6 +229,35 @@ export const cloudDb = {
     } catch (error) {
       console.warn('Initial cloud verification fallback:', error);
       return false;
+    }
+  },
+
+  /**
+   * Directly queries the Cloud Firestore SERVER bypassing any client-side cached data.
+   * Guarantees 100% fresh data straight from the cloud.
+   */
+  async fetchFreshServerData(): Promise<{ products: Product[]; content: SiteContent | null }> {
+    try {
+      const prodSnap = await getDocsFromServer(collection(db, 'products'));
+      const products: Product[] = [];
+      prodSnap.forEach((d) => {
+        products.push(d.data() as Product);
+      });
+
+      let content: SiteContent | null = null;
+      try {
+        const contentSnap = await getDocFromServer(doc(db, 'site_content', 'global'));
+        if (contentSnap.exists()) {
+          content = contentSnap.data() as SiteContent;
+        }
+      } catch (e) {
+        console.warn('Could not fetch content directly from server:', e);
+      }
+
+      return { products, content };
+    } catch (error) {
+      console.warn('Direct server fetch fallback:', error);
+      return { products: [], content: null };
     }
   }
 };

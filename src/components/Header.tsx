@@ -5,7 +5,8 @@ import {
   Menu,
   X,
   MessageSquare,
-  Sparkles
+  Sparkles,
+  RefreshCw
 } from 'lucide-react';
 import { MoonlitLogo } from './MoonlitLogo';
 import { SiteContent } from '../types';
@@ -29,6 +30,7 @@ interface HeaderProps {
   onOpenAdmin: () => void;
   onOpenInquiry: (productId?: string) => void;
   onOpenSearch: () => void;
+  onRefresh?: () => void;
   inquiryCount?: number;
   currency: 'PKR' | 'USD';
   onToggleCurrency: () => void;
@@ -41,6 +43,7 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenAdmin,
   onOpenInquiry,
   onOpenSearch,
+  onRefresh,
   inquiryCount = 0,
   currency,
   onToggleCurrency
@@ -114,6 +117,21 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Right Utility Buttons */}
           <div className="flex items-center gap-2 sm:gap-3">
+            {/* Live Refresh Trigger */}
+            {onRefresh && (
+              <button
+                onClick={onRefresh}
+                className="p-2 text-[#4F3910] hover:text-[#1F1405] hover:bg-[#e6ddc1]/60 rounded-full transition-colors flex items-center gap-1.5 cursor-pointer bg-transparent"
+                aria-label="Refresh website"
+                title="Refresh website to show latest updates"
+              >
+                <RefreshCw className="w-4 h-4 text-[#88641C]" />
+                <span className="hidden md:inline text-xs tracking-wider uppercase font-bold text-[#4F3910]">
+                  Refresh
+                </span>
+              </button>
+            )}
+
             {/* Search Trigger */}
             <button
               onClick={onOpenSearch}
@@ -210,6 +228,18 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           <div className="mt-8 pt-6 border-t border-[#ded3b6] space-y-3 text-xs text-[#5A4112] font-semibold">
+            {onRefresh && (
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onRefresh();
+                }}
+                className="w-full py-2.5 px-3 bg-[#e5dbc0] text-[#2D1F08] font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 rounded border border-[#ded3b6]"
+              >
+                <RefreshCw className="w-3.5 h-3.5 text-[#88641C]" />
+                <span>Refresh Website (Clear Cache)</span>
+              </button>
+            )}
             <div>
               <a
                 href={`https://wa.me/${whatsappDigits}`}
