@@ -3,10 +3,10 @@ import { INITIAL_PRODUCTS } from '../data/initialProducts';
 import { INITIAL_SITE_CONTENT } from '../data/initialContent';
 
 const STORAGE_KEYS = {
-  PRODUCTS: 'moonlit_products_v11',
-  CONTENT: 'moonlit_site_content_v11',
-  INQUIRIES: 'moonlit_inquiries_v11',
-  CATEGORIES: 'moonlit_categories_v11'
+  PRODUCTS: 'moonlit_products_v12',
+  CONTENT: 'moonlit_site_content_v12',
+  INQUIRIES: 'moonlit_inquiries_v12',
+  CATEGORIES: 'moonlit_categories_v12'
 };
 
 const sanitizeProducts = (list: Product[]): Product[] => {
@@ -15,12 +15,14 @@ const sanitizeProducts = (list: Product[]): Product[] => {
     if (!artNo || !/^\d{5}$/.test(String(artNo).trim())) {
       artNo = String(10001 + (idx % 90000));
     }
-    const cat =
-      p.category === 'Necklaces' ||
-      p.category === 'Necklace' ||
-      p.category === 'endants & Necklace'
-        ? 'Pendants & Necklace'
-        : p.category;
+    let cat = (p.category || '').trim();
+    if (
+      cat === 'Necklaces' ||
+      cat === 'Necklace' ||
+      cat === 'endants & Necklace'
+    ) {
+      cat = 'Pendants & Necklace';
+    }
     return {
       ...p,
       articleNo: String(artNo),

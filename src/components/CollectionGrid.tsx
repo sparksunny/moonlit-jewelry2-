@@ -46,7 +46,9 @@ export const CollectionGrid: React.FC<CollectionGridProps> = ({
 
   // Filter & sort logic
   const filteredProducts = useMemo(() => {
-    let result = products.filter((p) => p.visible);
+    let result = products.filter(
+      (p) => p.visible !== false && p.category !== 'Complimentary Services'
+    );
 
     // Strict & authoritative Category filter (preventing cross-category leakage)
     if (selectedCategory && selectedCategory !== 'All Jewelry' && selectedCategory !== 'Home') {
@@ -217,7 +219,12 @@ export const CollectionGrid: React.FC<CollectionGridProps> = ({
             return (
               <button
                 key={cat}
-                onClick={() => onSelectCategory(cat)}
+                onClick={() => {
+                  onSelectCategory(cat);
+                  setSearchQuery('');
+                  setSelectedMaterial('all');
+                  setSelectedAvailability('all');
+                }}
                 className={`px-3 py-1.5 text-xs font-sans tracking-[0.12em] uppercase whitespace-nowrap transition-all cursor-pointer ${
                   active
                     ? 'bg-[#7E5C1E] text-[#FAF6EE] font-bold shadow-xs'

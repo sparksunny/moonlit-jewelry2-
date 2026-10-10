@@ -307,7 +307,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                 >
                   <option value="all">All Categories</option>
                   <option value="wedding bands & rings">Wedding Bands & Rings</option>
-                  <option value="necklaces">Necklaces</option>
+                  <option value="pendants & necklace">Pendants & Necklace</option>
                   <option value="bridal jewelry">Bridal Jewelry</option>
                   <option value="bangles & bracelets">Bangles & Bracelets</option>
                   <option value="earrings & studs">Earrings & Studs</option>

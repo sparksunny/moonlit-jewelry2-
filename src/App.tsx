@@ -10,6 +10,7 @@ import { AdminLoginModal } from './components/Admin/AdminLoginModal';
 import { AdminDashboard } from './components/Admin/AdminDashboard';
 import { storage } from './services/storage';
 import { authService } from './services/auth';
+import { cloudDb } from './services/firebase';
 import { Product, SiteContent, CustomerInquiry } from './types';
 
 export default function App() {
@@ -32,6 +33,41 @@ export default function App() {
   // Always start with refresh: reset admin authentication on every page load/refresh
   useEffect(() => {
     authService.logout();
+  }, []);
+
+  // Multi-device real-time sync with Cloud Firestore
+  useEffect(() => {
+    // 1. Initialize cloud catalog if Firestore is empty on first boot
+    cloudDb.initializeIfEmpty(storage.getProducts(), storage.getContent());
+
+    // 2. Real-time subscription to cloud products
+    const unsubProducts = cloudDb.subscribeToProducts((cloudProducts) => {
+      if (cloudProducts && cloudProducts.length > 0) {
+        setProducts(cloudProducts);
+        storage.saveProducts(cloudProducts);
+      }
+    });
+
+    // 3. Real-time subscription to cloud site branding and content
+    const unsubContent = cloudDb.subscribeToSiteContent((cloudContent) => {
+      if (cloudContent) {
+        setContent(cloudContent);
+        storage.saveContent(cloudContent);
+      }
+    });
+
+    // 4. Real-time subscription to cloud inquiries
+    const unsubInquiries = cloudDb.subscribeToInquiries((cloudInquiries) => {
+      if (cloudInquiries) {
+        setInquiries(cloudInquiries);
+      }
+    });
+
+    return () => {
+      unsubProducts();
+      unsubContent();
+      unsubInquiries();
+    };
   }, []);
 
   // Sync state changes with document title
@@ -72,15 +108,25 @@ export default function App() {
   const handleSaveProducts = (newProducts: Product[]) => {
     setProducts(newProducts);
     storage.saveProducts(newProducts);
+    cloudDb.saveAllProducts(newProducts).catch((err) => {
+      console.error('Failed to sync products to Firestore:', err);
+    });
   };
 
   const handleSaveContent = (newContent: SiteContent) => {
     setContent(newContent);
     storage.saveContent(newContent);
+    cloudDb.saveSiteContent(newContent).catch((err) => {
+      console.error('Failed to sync content to Firestore:', err);
+    });
   };
 
   const handleInquirySubmitted = (newInquiry: CustomerInquiry) => {
     setInquiries((prev) => [newInquiry, ...prev]);
+    storage.saveInquiry(newInquiry);
+    cloudDb.saveInquiry(newInquiry).catch((err) => {
+      console.error('Failed to sync inquiry to Firestore:', err);
+    });
   };
 
   const scrollToCollection = () => {
@@ -91,7 +137,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#FAF9F5] text-[#44331C] flex flex-col font-sans selection:bg-[#E8DFC8]">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#fffbe8] text-black flex flex-col font-sans selection:bg-[#E8DFC8]">
       {/* Primary Header */}
       <Header
         content={content}
